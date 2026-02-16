@@ -22,7 +22,7 @@
 >
 > *(pause for laugh)*
 >
-> "What we're really here for is **connections**. If you know organisations that care about social impact, ESG, or community investment — introduce us. If you've run campaigns or built movements — we want to learn from you. And if you want to see what happens when students stop writing case studies and start building real social enterprises — follow our journey."
+> "We're seeking support in three areas. **Connections** — introduce us to organisations that care about social impact, ESG, or community investment. **Advice** — if you've run campaigns or built movements, we want to learn from you. And **amplification** — follow our journey and help us reach people who want to make a difference."
 
 ### CLOSE (10 sec)
 > "Every person Change Please trains gets a job, a home, and a future — immediately. Help us fund more of that. Thank you."
