@@ -189,10 +189,14 @@ Specific channels and activities (grouped by source):
 - Ethics clearance
 - Classroom announcements (Dr. Tabish et al)
 - Dean's email to Business School
+- **Prof. Mohammed Ali (VPC & Dean of FBL)** — met at Cambridge Dean Award (Feb 10), supportive, encouraged reaching out to Jo Living
 
 **AREA:**
-- Introduction for matched funding
-- **Key contact:** Jo Living — follow-up email sent (Feb 19), awaiting response
+- Introduction for matched funding — not available (AREA remit is student startups, not charitable fundraising)
+- **Key contact:** Jo Living (Entrepreneurship Manager) — Teams call scheduled **Tue 24 Feb, 11:00-11:30**. Has personal ideas to share. CC'd wider AREA team for signposting.
+
+**Change Please:**
+- Frankie liaison handled by Dr. Tabish (expect slow turnaround — Dr. Tabish is very busy)
 
 **Campaign Materials:**
 
