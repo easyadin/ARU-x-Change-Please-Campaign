@@ -25,6 +25,7 @@
         .slide {
             width: 100vw;
             height: 100vh;
+            height: 100dvh;
             position: fixed;
             top: 0;
             left: 0;
@@ -649,14 +650,15 @@
             }
 
             .slide-problem .big-stat-label {
-                font-size: 15px;
-                margin-bottom: 32px;
+                font-size: 14px;
+                margin-bottom: 20px;
             }
 
             .slide-problem .stat-row {
-                flex-direction: column;
-                gap: 20px;
-                align-items: center;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 16px;
+                align-items: start;
             }
 
             .slide-problem .stat-num {
