@@ -192,7 +192,7 @@ Specific channels and activities (grouped by source):
 
 **AREA:**
 - Introduction for matched funding
-- **Key contact:** Jo Living — brief initial meeting held (Feb 11), follow-up email pending
+- **Key contact:** Jo Living — follow-up email sent (Feb 19), awaiting response
 
 **Campaign Materials:**
 
