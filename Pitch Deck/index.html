@@ -477,6 +477,18 @@
             text-transform: uppercase;
         }
 
+        /* ===== SLIDE 7: QR CODE ===== */
+        .slide-qr {
+            background: #0a0a0a;
+            text-align: center;
+            color: #fff;
+        }
+
+        .slide-qr h2 {
+            color: #fff;
+            margin-bottom: 32px;
+        }
+
         /* ===== SLIDE 6: CONTACT ===== */
         .slide-contact {
             background: #0a0a0a;
@@ -1103,8 +1115,20 @@
         <div class="contact-cta animate-in delay-5">Come find us after — let's talk.</div>
     </div>
 
+    <!-- SLIDE 7: QR CODE -->
+    <div class="slide slide-qr" data-slide="7">
+        <div class="section-tag animate-in delay-1">Connect With Us</div>
+        <h2 class="animate-in delay-2">Scan here.</h2>
+        <div class="animate-in delay-3" style="display: flex; flex-direction: column; align-items: center; gap: 32px;">
+            <img src="./assets/images/qr-connect.png" alt="Scan to connect"
+                style="width: 280px; height: 280px; border-radius: 12px; background: white; padding: 16px;">
+            <p style="font-size: 15px; color: rgba(255,255,255,0.5); letter-spacing: 0.03em;">Leave your details and
+                we'll follow up.</p>
+        </div>
+    </div>
+
     <!-- NAVIGATION -->
-    <div class="slide-counter"><span id="current">1</span> / <span id="total">6</span></div>
+    <div class="slide-counter"><span id="current">1</span> / <span id="total">7</span></div>
     <div class="nav-buttons">
         <button class="nav-btn" id="prev-btn" onclick="event.stopPropagation(); goTo(current - 1)">←</button>
         <button class="nav-btn" id="next-btn" onclick="event.stopPropagation(); goTo(current + 1)">→</button>

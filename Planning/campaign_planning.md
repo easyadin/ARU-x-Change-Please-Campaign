@@ -189,7 +189,8 @@ Specific channels and activities (grouped by source):
 - Ethics clearance
 - Classroom announcements (Dr. Tabish et al)
 - Dean's email to Business School
-- **Prof. Mohammed Ali (VPC & Dean of FBL)** — met at Cambridge Dean Award (Feb 10), supportive, encouraged reaching out to Jo Living
+- **Prof. Mohammad Ali (VPC & Dean of FBL)** — met at Cambridge Dean Award (Feb 10) and award presentation (Feb 18). Email sent (Feb 19) — requesting Comms/Marketing introduction. Awaiting response.
+- **Daniel Berger (Deputy Dean, Education)** — email drafted. Key for faculty-level support: Dean's email to students, co-curricular framing, classroom announcements.
 
 **AREA:**
 - Introduction for matched funding — not available (AREA remit is student startups, not charitable fundraising)
