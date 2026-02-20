@@ -65,7 +65,7 @@ Dr Tabish outlined options:
    - One exclusively for students (guest speaker, discussion, talk)
 
 ### Social Media
-- Dignesh volunteered — strong social media experience
+- Vignesh volunteered — strong social media experience
 - Plan: Create Instagram account for the campaign
 - Dr Tabish fully supportive — "no limits"
 
@@ -125,7 +125,7 @@ Dr Tabish needs a concise one-pager covering:
 | 2 | Develop tangible event strategy/plan | Team | Before Sat meeting |
 | 3 | Forward Change Please toolkit to team | Dr Tabish | ASAP |
 | 4 | Review and incorporate marketing materials | Vivian | Next week |
-| 5 | Create campaign Instagram account | Dignesh + team | Next week |
+| 5 | Create campaign Instagram account | Vignesh + team | Next week |
 | 6 | Set up meeting with Change Please marketing manager | Team (after strategy) | TBD |
 | 7 | Send Daniel Berger email | Israel (Tobi) | This week |
 | 8 | Confirm face-to-face meeting date | Team | This week |

@@ -234,7 +234,7 @@ Specific channels and activities (grouped by source):
 - QR code linking to JustGiving
 
 *Social Media:*
-- **Dignesh** volunteered — strong social media experience
+- **Vignesh** volunteered — strong social media experience
 - Plan: Create campaign Instagram account
 - Instagram post graphics + Stories
 - LinkedIn post graphics
@@ -299,7 +299,7 @@ Dr Tabish outlined options to consider:
 
 **Digital & Social Media Lead:**
 - Social media content, scheduling, engagement, digital screens
-- *Lead:* Dignesh
+- *Lead:* Vignesh
 - *Support 1:* Sadil
 - *Support 2:* TBD
 - *Support 3:* TBD
@@ -360,7 +360,7 @@ Dr Tabish needs a concise one-pager covering:
 6. Monday — Dr Tabish meets Dan Berger (payment system, faculty support)
 7. Tuesday 11:00 — Jo Living call (AREA)
 8. Review and incorporate Change Please marketing materials — Vivian
-9. Create campaign Instagram account — Dignesh + team
+9. Create campaign Instagram account — Vignesh + team
 10. Set up meeting with Change Please Marketing Manager — Team
 
 **TBD (next 2 weeks):**
