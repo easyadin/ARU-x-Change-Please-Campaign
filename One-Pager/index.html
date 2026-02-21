@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARU × Change Please — One-Pager</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        @page {
+            size: A4 portrait;
+            margin: 0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #111;
+            padding: 40px;
+        }
+
+        .page {
+            width: 210mm;
+            height: 297mm;
+            margin: 0 auto;
+            background: #FFFFFF;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+            overflow: hidden;
+        }
+
+        @media print {
+            body {
+                padding: 0;
+                background: none;
+            }
+
+            .page {
+                margin: 0;
+                box-shadow: none;
+            }
+        }
+
+        /* ===== HEADER BAR ===== */
+        .header {
+            background: #061D49;
+            padding: 28px 48px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header img {
+            height: 48px;
+        }
+
+        .header .doc-label {
+            font-size: 9px;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            background: #061D49;
+            padding: 0 48px 36px;
+            text-align: left;
+        }
+
+        .hero .category {
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #FFD100;
+            margin-bottom: 12px;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 400;
+            color: #FFFFFF;
+            line-height: 1.25;
+            margin-bottom: 12px;
+        }
+
+        .hero .subtitle {
+            font-size: 12px;
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.6;
+            max-width: 500px;
+        }
+
+        /* ===== TRIANGLE SECTION ===== */
+        .triangle-section {
+            padding: 28px 48px 20px;
+        }
+
+        .triangle-label {
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #061D49;
+            margin-bottom: 20px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #FFD100;
+            display: inline-block;
+        }
+
+        .triangle-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .triangle-item {
+            display: grid;
+            grid-template-columns: 56px 1fr;
+            gap: 16px;
+            align-items: start;
+        }
+
+        .triangle-icon {
+            width: 56px;
+            height: 56px;
+            background: #061D49;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .triangle-icon .number {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: #FFD100;
+        }
+
+        .triangle-item h3 {
+            font-size: 13px;
+            font-weight: 700;
+            color: #061D49;
+            margin-bottom: 4px;
+            letter-spacing: 0.01em;
+        }
+
+        .triangle-item p {
+            font-size: 10.5px;
+            font-weight: 400;
+            color: #444;
+            line-height: 1.6;
+        }
+
+        /* ===== THE ASK BAR ===== */
+        .ask-bar {
+            margin: 20px 48px;
+            padding: 20px 28px;
+            background: #F8F6F0;
+            border-left: 4px solid #FFD100;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 16px;
+        }
+
+        .ask-item .ask-label {
+            font-size: 9px;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #888;
+            margin-bottom: 4px;
+        }
+
+        .ask-item .ask-value {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            font-weight: 600;
+            color: #061D49;
+            line-height: 1.2;
+        }
+
+        .ask-item .ask-detail {
+            font-size: 9.5px;
+            color: #666;
+            margin-top: 2px;
+            line-height: 1.4;
+        }
+
+        /* ===== MOMENTUM SECTION ===== */
+        .momentum {
+            padding: 16px 48px;
+        }
+
+        .momentum-label {
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #061D49;
+            margin-bottom: 12px;
+            padding-bottom: 6px;
+            border-bottom: 2px solid #FFD100;
+            display: inline-block;
+        }
+
+        .momentum-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .momentum-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        .momentum-check {
+            color: #FFD100;
+            font-weight: 700;
+            font-size: 13px;
+            line-height: 1.3;
+            flex-shrink: 0;
+        }
+
+        .momentum-item span {
+            font-size: 10px;
+            color: #444;
+            line-height: 1.5;
+        }
+
+        /* ===== SDG STRIP ===== */
+        .sdg-strip {
+            padding: 12px 48px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .sdg-strip .sdg-label {
+            font-size: 8px;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #999;
+            margin-right: 8px;
+        }
+
+        .sdg-strip img {
+            height: 36px;
+            width: 36px;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #061D49;
+            padding: 16px 48px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer .team-label {
+            font-size: 8px;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.4);
+            margin-bottom: 4px;
+        }
+
+        .footer .team-names {
+            font-size: 9px;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.5;
+        }
+
+        .footer .contact {
+            text-align: right;
+        }
+
+        .footer .contact .name {
+            font-size: 9px;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 2px;
+        }
+
+        .footer .contact .email {
+            font-size: 8px;
+            color: #FFD100;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page">
+        <!-- HEADER -->
+        <div class="header">
+            <img src="../Proposal/assets/logos/aru-full.png" alt="ARU">
+            <div class="doc-label">One-Pager · Feb 2026</div>
+        </div>
+
+        <!-- HERO -->
+        <div class="hero">
+            <div class="category">Student-Led Social Enterprise Initiative</div>
+            <h1>ARU × Change Please</h1>
+            <div class="subtitle">
+                What started as an MBA case study has become a student-led crowdfunding campaign
+                to fund barista training placements for people experiencing homelessness.
+            </div>
+        </div>
+
+        <!-- THE TRIANGLE -->
+        <div class="triangle-section">
+            <div class="triangle-label">The Journey</div>
+            <div class="triangle-grid">
+                <!-- 1. How It Started -->
+                <div class="triangle-item">
+                    <div class="triangle-icon">
+                        <div class="number">1</div>
+                    </div>
+                    <div>
+                        <h3>How It Started</h3>
+                        <p>
+                            Through Dr Tabish Zaman's Social Enterprise module (MOD007665), our MBA cohort studied
+                            Change Please — a social enterprise that trains people experiencing homelessness as
+                            baristas, providing employment, housing, and a path forward. A site
+                            visit brought the mission to life. What began as academic analysis became personal
+                            conviction: we wanted to do more than study it — we wanted to contribute.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 2. What We Learned -->
+                <div class="triangle-item">
+                    <div class="triangle-icon">
+                        <div class="number">2</div>
+                    </div>
+                    <div>
+                        <h3>What It Did For Us</h3>
+                        <p>
+                            This initiative has become the bridge between theory and practice. We've applied
+                            classroom learning — stakeholder analysis, marketing strategy, financial planning —
+                            to a live social enterprise challenge. Each team member has stepped into a leadership
+                            role: campaign strategy, creative direction, outreach, digital marketing,
+                            and ambassador recruitment. The personal growth has been as significant as the
+                            professional development.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 3. Where It's Going -->
+                <div class="triangle-item">
+                    <div class="triangle-icon">
+                        <div class="number">3</div>
+                    </div>
+                    <div>
+                        <h3>Where It's Going</h3>
+                        <p>
+                            We are building a crowdfunding campaign targeting <strong>£10,000–£15,000</strong>,
+                            all going directly to Change Please Foundation to fund barista training placements.
+                            The plan includes a flagship event bringing together industry, academia, and
+                            the community, supported by an online campaign. Change Please has provided
+                            their official toolkit and connected us with their marketing team for amplification.
+                            We're building this as a repeatable model for future cohorts.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- THE ASK -->
+        <div class="ask-bar">
+            <div class="ask-item">
+                <div class="ask-label">Fundraising Target</div>
+                <div class="ask-value">£10–15K</div>
+                <div class="ask-detail">Direct to Change Please Foundation</div>
+            </div>
+            <div class="ask-item">
+                <div class="ask-label">What It Funds</div>
+                <div class="ask-value">Training</div>
+                <div class="ask-detail">Barista placements for people<br>experiencing homelessness</div>
+            </div>
+            <div class="ask-item">
+                <div class="ask-label">Approach</div>
+                <div class="ask-value">Event + Online</div>
+                <div class="ask-detail">Flagship event + parallel<br>crowdfunding campaign</div>
+            </div>
+        </div>
+
+        <!-- MOMENTUM -->
+        <div class="momentum">
+            <div class="momentum-label">Momentum So Far</div>
+            <div class="momentum-grid">
+                <div class="momentum-item">
+                    <span class="momentum-check">✓</span>
+                    <span>90+ industry contacts from Glasshouse networking event (VCs, charities, fundraisers)</span>
+                </div>
+                <div class="momentum-item">
+                    <span class="momentum-check">✓</span>
+                    <span>Change Please toolkit and marketing manager access secured</span>
+                </div>
+                <div class="momentum-item">
+                    <span class="momentum-check">✓</span>
+                    <span>University payment handling confirmed — fully compliant, no student money handling</span>
+                </div>
+                <div class="momentum-item">
+                    <span class="momentum-check">✓</span>
+                    <span>AREA, MBA Director, and Dean of FBL aware and supportive</span>
+                </div>
+                <div class="momentum-item">
+                    <span class="momentum-check">✓</span>
+                    <span>Full campaign proposal, pitch deck, and digital assets built</span>
+                </div>
+                <div class="momentum-item">
+                    <span class="momentum-check">✓</span>
+                    <span>Dedicated team with assigned leadership roles across all functions</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- SDG STRIP -->
+        <div class="sdg-strip">
+            <span class="sdg-label">SDGs</span>
+            <img src="../Proposal/assets/images/sdg-01.png" alt="SDG 1">
+            <img src="../Proposal/assets/images/sdg-08.png" alt="SDG 8">
+            <img src="../Proposal/assets/images/sdg-10.png" alt="SDG 10">
+            <img src="../Proposal/assets/images/sdg-11.png" alt="SDG 11">
+        </div>
+
+        <!-- FOOTER -->
+        <div class="footer">
+            <div>
+                <div class="team-label">Team</div>
+                <div class="team-names">
+                    Israel (Campaign Lead) · Vivian (Outreach & Events) · Mohamed (Ambassador & Recruitment) · Anita
+                    (Creative & Design)
+                </div>
+            </div>
+            <div class="contact">
+                <div class="name">Dr Tabish Zaman</div>
+                <div class="email">tabish.zaman@aru.ac.uk</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
