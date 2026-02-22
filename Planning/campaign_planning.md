@@ -189,24 +189,43 @@ Specific channels and activities (grouped by source):
 - Ethics clearance
 - Classroom announcements (Dr. Tabish et al)
 - Dean's email to Business School
+- **Prof. Mohammad Ali (VPC & Dean of FBL)** — Israel pitched him directly. Very excited. Directed team to Jo (AREA) and Deputy Dean. ✅ Aware
+- **Alicia (MBA Director)** — Dr Tabish spoke with her. Very excited. ✅ Aware
+- **Daniel Berger (Quality Manager)** — Dr Tabish meeting him **Monday Feb 24**. Expected to confirm internal payment system. Key contact.
+- **Deputy Dean** — Mohammad Ali recommended speaking with him for entrepreneurship/fundraising guidance.
 
 **AREA:**
-- Introduction for matched funding
-- **Key contact:** Jo Living — brief initial meeting held (Feb 11), follow-up email pending
+- AREA itself cannot officially support charitable fundraising (not their remit)
+- **Jo Living (Entrepreneurship Manager)** — Personally excited, will **personally support**. Meeting confirmed **Tue 24 Feb, 11:00-11:30**.
+
+**Change Please:**
+- **Leonardo** (met on visit) went back to his team — **toolkit/materials sent to Dr Tabish** ✅
+- Dr Tabish to forward toolkit to team
+- Change Please willing to send speakers to events
+- Connected us with their **Marketing Manager** — can help build social media strategy to push campaign beyond ARU community
+- **Action:** Update Change Please marketing manager once campaign strategy is finalised
+
+**Money Handling:** ✅ SOLVED
+- University will provide **internal payment system**
+- Resourcing team handles all funds → direct transfer to Change Please
+- No team member touches money
+- University certified, regulation compliant
+- To be confirmed after Monday meeting with Dan Berger
 
 **Campaign Materials:**
 
-*Change Please Toolkit (from Frankie):*
+*Change Please Toolkit (from Leonardo — received by Dr Tabish):*
 - Official fundraising kit
 - Approved logos and branding
 - Impact stats and stories
 - Photos/videos for use
 - Testimonials from graduates
+- **Vivian to lead on reviewing and incorporating**
 
 *JustGiving Page:*
 - Page title and description
 - Campaign images/banner
-- Target amount display (£5-10K)
+- Target amount display (£10-15K)
 - Change Please as beneficiary
 
 *Print (Campus):*
@@ -215,10 +234,12 @@ Specific channels and activities (grouped by source):
 - QR code linking to JustGiving
 
 *Social Media:*
-- Instagram post graphics
-- Instagram Stories
+- **Vignesh** volunteered — strong social media experience
+- Plan: Create campaign Instagram account
+- Instagram post graphics + Stories
 - LinkedIn post graphics
 - Facebook share graphics
+- Co-strategy with Change Please Marketing Manager
 
 *Email Copy:*
 - SU newsletter blurb
@@ -228,25 +249,32 @@ Specific channels and activities (grouped by source):
 *Digital Screens:*
 - Slide for campus TV screens (16:9 format)
 
-**Events (Proposed):**
+**Events (Proposed — needs planning):**
 
-*Launch Event:*
-- **Purpose:** Public campaign kickoff – JustGiving goes live, start collecting donations
-- **Where:** Virtual or Helmore 110 (tentative)
-- **When:** Week of Feb 24 (tentative)
-- **Format:** 
-  - Opening (intro to campaign and Change Please)
-  - Each team member presents their responsibility area
-  - Q&A
-  - Call to action: donate via QR codes
-- **Audience:** Open to all students and staff
-- **Promotion:** Pushed via all channels (SU, Comms, Faculty) same week
+Dr Tabish outlined options to consider:
+1. **Physical guest-only invite event** — guest speakers, discussion, workshop (for mobilised external contacts)
+2. **Student-focused event** — guest speaker, talk, discussion (exclusively for students)
+3. **Online campaign running in parallel** — JustGiving + social media push
 
-*Mid-Campaign Push (Optional):*
-- **What:** Progress update, renewed call to action
-- **Where:** Classroom or online
-- **When:** Week 5-6
-- **Purpose:** Re-energize donations if momentum slows
+*Target: Draw in £10,000–£15,000*
+
+**Podcast:**
+- Dr Tabish suggested doing it **after the event** — more impactful with outcomes to discuss
+- Fits his podcast theme (marginal perspective)
+
+---
+
+## 5b. Glasshouse Networking Event — Feb 20
+
+- **Venue:** Glasshouse, Cambridge (O Pay networking session)
+- **Attendance:** ~90 people — entrepreneurship/industry professionals
+- **Team present:** Mohamed, Vivian, Anita, V
+- Vivian delivered the campaign presentation
+- Collected emails and LinkedIn contacts
+- Strong interest in attending the planned campaign event
+- Attendees included: finance professionals, investment bankers, VCs, charity workers, fundraising professionals
+- Suggestions received: apprenticeship companies, charity partnerships
+- Mentioned potential certificates for contributing businesses
 
 ---
 
@@ -257,7 +285,7 @@ Specific channels and activities (grouped by source):
 
 **Campaign Lead:**
 - Overall coordination, proposal ownership, timeline management
-- *Lead:* Israel
+- *Lead:* Israel (Tobi)
 - *Support 1:* Vivian
 - *Support 2:* Mohammad
 - *Support 3:* Anita
@@ -271,7 +299,7 @@ Specific channels and activities (grouped by source):
 
 **Digital & Social Media Lead:**
 - Social media content, scheduling, engagement, digital screens
-- *Lead:* TBD
+- *Lead:* Vignesh
 - *Support 1:* Sadil
 - *Support 2:* TBD
 - *Support 3:* TBD
@@ -293,36 +321,50 @@ Specific channels and activities (grouped by source):
 
 **Content Lead:**
 - JustGiving copy, email blurbs, social captions, storytelling
-- *Lead:* Israel
+- *Lead:* Israel (Tobi)
 - *Support 1:* Anita
 - *Support 2:* Mohammad
 - *Support 3:* Harshita
 
+**Marketing Materials Lead:**
+- Review Change Please toolkit, coordinate with Change Please Marketing Manager
+- *Lead:* Vivian
+
 *Note: Each lead is responsible for documenting their area for legacy/handover.*
+
 ---
 
-## 7. Next Steps
+## 7. Dr Tabish's Ask — One-Pager ("The Triangle")
 
-**Today (Feb 4):**
-1. Team sync at 8pm – review this document, assign roles
+Dr Tabish needs a concise one-pager covering:
+1. **How it started** — origin of the initiative
+2. **Learning impact** — how it linked to classroom learning (MOD007665) and outside learning
+3. **Where it's going** — what the campaign will do going forward and its impact
 
-**This Week (Feb 5-7):**
-2. Israel finalizes proposal and sends to Dr. Tabish
-3. Dr. Tabish reviews, adds ethics clearance, returns
-4. Team confirms timeline and responsibilities
+*Purpose: Dr Tabish will use this to brief faculty, AREA, Dan Berger, and all stakeholders now getting on board.*
 
-**Next Week (Feb 10-14):**
-5. Request Change Please toolkit from Frankie (via Dr. Tabish)
-6. Create JustGiving page (draft)
-7. Begin campaign materials design
+---
 
-**Week of Feb 17-21:**
-8. Finalize all materials
-9. Coordinate with SU/Comms for launch push
+## 8. Next Steps (Updated Feb 20)
 
-**Week of Feb 24 (tentative launch):**
-10. Launch event
-11. Campaign goes live
+**This Week (Feb 20-23):**
+1. Create one-pager ("The Triangle") — Israel
+2. Develop tangible event strategy/plan — Team
+3. Dr Tabish forwards Change Please toolkit — Dr Tabish
+4. Send Daniel Berger email — Israel
+
+**Saturday Feb 22:**
+5. Follow-up meeting with Dr Tabish (~12:30, Teams)
+
+**Next Week (Feb 24-28):**
+6. Monday — Dr Tabish meets Dan Berger (payment system, faculty support)
+7. Tuesday 11:00 — Jo Living call (AREA)
+8. Review and incorporate Change Please marketing materials — Vivian
+9. Create campaign Instagram account — Vignesh + team
+10. Set up meeting with Change Please Marketing Manager — Team
+
+**TBD (next 2 weeks):**
+11. Face-to-face meeting in Cambridge — Team + Dr Tabish
 
 
 
