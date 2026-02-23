@@ -1368,7 +1368,7 @@
 
         // ===== CHAT =====
         function setupChat() {
-            db.ref('chat').orderByChild('time').limitToLast(100).on('child_added', (snap) => {
+            db.ref('chat').limitToLast(100).on('child_added', (snap) => {
                 const msg = snap.val();
                 if (!msg) return;
                 addChatMessage(msg);
@@ -1434,6 +1434,7 @@
                 // Add comment icon
                 const icon = document.createElement('button');
                 icon.className = 'comment-icon';
+                icon.setAttribute('contenteditable', 'false');
                 icon.textContent = '💬';
                 icon.onclick = (e) => {
                     e.stopPropagation();
