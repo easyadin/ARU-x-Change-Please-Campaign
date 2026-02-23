@@ -24,6 +24,7 @@
             font-family: 'Inter', sans-serif;
             background: #111;
             padding: 40px;
+            padding-bottom: 80px;
         }
 
         .page {
@@ -35,8 +36,6 @@
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
             overflow: hidden;
         }
-
-
 
         .page-watermark {
             position: absolute;
@@ -101,8 +100,6 @@
             overflow: visible;
             margin-top: -1px;
         }
-
-
 
         .hero .category {
             font-size: 10px;
@@ -355,28 +352,6 @@
             line-height: 1.5;
         }
 
-        /* ===== SDG STRIP ===== */
-        .sdg-strip {
-            padding: 20px 48px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .sdg-strip .sdg-label {
-            font-size: 8px;
-            font-weight: 600;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            color: #999;
-            margin-right: 8px;
-        }
-
-        .sdg-strip img {
-            height: 36px;
-            width: 36px;
-        }
-
         /* ===== FOOTER ===== */
         .footer {
             position: absolute;
@@ -422,14 +397,6 @@
             color: #FFD100;
         }
 
-        .footer .partnership {
-            font-size: 7.5px;
-            color: rgba(255, 255, 255, 0.35);
-            margin-top: 4px;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-        }
-
         /* ===== EDITABLE MODE ===== */
         [contenteditable]:hover {
             outline: 1px dashed rgba(223, 94, 112, 0.3);
@@ -443,7 +410,6 @@
             background: rgba(255, 209, 0, 0.05);
         }
 
-        /* When zones are toggled ON — persistent outlines on everything */
         body.zones-on [contenteditable] {
             outline: 2px dashed rgba(223, 94, 112, 0.4);
             outline-offset: 2px;
@@ -454,6 +420,12 @@
             background: rgba(255, 209, 0, 0.05);
         }
 
+        body.view-mode [contenteditable] {
+            outline: none !important;
+            cursor: default !important;
+        }
+
+        /* ===== TOOLBAR ===== */
         .edit-toolbar {
             position: fixed;
             bottom: 0;
@@ -461,7 +433,7 @@
             right: 0;
             background: #061D49;
             color: white;
-            padding: 12px 32px;
+            padding: 10px 24px;
             font-family: 'Inter', sans-serif;
             font-size: 12px;
             z-index: 1000;
@@ -469,33 +441,29 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 20px;
+            gap: 12px;
             line-height: 1.5;
         }
 
-        .edit-toolbar strong {
+        .toolbar-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .toolbar-left strong {
             color: #FFD100;
             font-size: 13px;
         }
 
-        .edit-toolbar .print-btn {
-            display: inline-block;
-            padding: 8px 20px;
-            background: #DF5E70;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 11px;
-            font-weight: 600;
+        .toolbar-right {
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
-        .edit-toolbar .print-btn:hover {
-            background: #c94d5e;
-        }
-
-        .edit-toolbar .toggle-btn {
-            padding: 8px 20px;
+        .toolbar-btn {
+            padding: 6px 14px;
             background: rgba(255, 255, 255, 0.15);
             color: white;
             border: none;
@@ -503,25 +471,478 @@
             cursor: pointer;
             font-size: 11px;
             font-weight: 600;
+            font-family: 'Inter', sans-serif;
+            transition: background 0.2s;
         }
 
-        .edit-toolbar .toggle-btn:hover {
+        .toolbar-btn:hover {
             background: rgba(255, 255, 255, 0.25);
         }
 
+        .toolbar-btn.active {
+            background: #FFD100;
+            color: #061D49;
+        }
+
+        .toolbar-btn.print-btn {
+            background: #DF5E70;
+        }
+
+        .toolbar-btn.print-btn:hover {
+            background: #c94d5e;
+        }
+
+        /* ===== PRESENCE BADGES ===== */
+        .presence-bar {
+            display: flex;
+            align-items: center;
+        }
+
+        .presence-badge {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            font-weight: 700;
+            color: white;
+            border: 2px solid #061D49;
+            margin-left: -6px;
+            cursor: default;
+            position: relative;
+        }
+
+        .presence-badge:first-child {
+            margin-left: 0;
+        }
+
+        .presence-badge.is-me {
+            border-color: #FFD100;
+        }
+
+        .presence-badge .tooltip {
+            display: none;
+            position: absolute;
+            bottom: 34px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #333;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 10px;
+            font-weight: 400;
+            white-space: nowrap;
+        }
+
+        .presence-badge:hover .tooltip {
+            display: block;
+        }
+
+        .presence-overflow {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            font-weight: 600;
+            color: white;
+            margin-left: -6px;
+            cursor: default;
+        }
+
+        /* ===== FIELD PRESENCE (who's editing) ===== */
+        .field-presence-tag {
+            position: absolute;
+            top: -18px;
+            left: 0;
+            font-size: 9px;
+            font-weight: 600;
+            color: white;
+            padding: 1px 6px;
+            border-radius: 3px 3px 0 0;
+            pointer-events: none;
+            z-index: 10;
+            white-space: nowrap;
+        }
+
+        [data-field] {
+            position: relative;
+        }
+
+        /* ===== CHAT PANEL ===== */
+        .chat-fab {
+            position: fixed;
+            bottom: 60px;
+            right: 24px;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: #DF5E70;
+            color: white;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+            z-index: 1001;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.2s;
+        }
+
+        .chat-fab:hover {
+            transform: scale(1.1);
+        }
+
+        .chat-fab .badge {
+            position: absolute;
+            top: -4px;
+            right: -4px;
+            background: #FFD100;
+            color: #061D49;
+            font-size: 10px;
+            font-weight: 700;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: none;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .chat-panel {
+            position: fixed;
+            bottom: 60px;
+            right: 24px;
+            width: 340px;
+            height: 450px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3);
+            z-index: 1002;
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .chat-panel.open {
+            display: flex;
+        }
+
+        .chat-header {
+            background: #061D49;
+            color: white;
+            padding: 14px 16px;
+            font-size: 13px;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chat-header .close-chat {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            opacity: 0.6;
+        }
+
+        .chat-header .close-chat:hover {
+            opacity: 1;
+        }
+
+        .chat-messages {
+            flex: 1;
+            overflow-y: auto;
+            padding: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .chat-msg {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .chat-msg .msg-meta {
+            font-size: 10px;
+            font-weight: 600;
+            display: flex;
+            gap: 6px;
+            align-items: center;
+        }
+
+        .chat-msg .msg-time {
+            font-weight: 400;
+            color: #999;
+        }
+
+        .chat-msg .msg-text {
+            font-size: 12px;
+            color: #333;
+            line-height: 1.5;
+            padding: 6px 10px;
+            background: #f4f4f4;
+            border-radius: 8px;
+            max-width: 90%;
+        }
+
+        .chat-msg.mine .msg-text {
+            background: #061D49;
+            color: white;
+            align-self: flex-end;
+        }
+
+        .chat-input-area {
+            display: flex;
+            gap: 8px;
+            padding: 10px 12px;
+            border-top: 1px solid #eee;
+        }
+
+        .chat-input-area input {
+            flex: 1;
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 12px;
+            font-family: 'Inter', sans-serif;
+            outline: none;
+        }
+
+        .chat-input-area input:focus {
+            border-color: #DF5E70;
+        }
+
+        .chat-input-area button {
+            padding: 8px 14px;
+            background: #DF5E70;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        /* ===== INLINE COMMENTS ===== */
+        .comment-icon {
+            position: absolute;
+            top: 2px;
+            right: 2px;
+            width: 22px;
+            height: 22px;
+            background: #FFD100;
+            color: #061D49;
+            border: none;
+            border-radius: 4px;
+            font-size: 12px;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            font-weight: 700;
+        }
+
+        [data-field]:hover .comment-icon,
+        .comment-icon.has-comments {
+            display: flex;
+        }
+
+        .comment-thread {
+            position: fixed;
+            width: 300px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+            z-index: 2000;
+            display: none;
+            flex-direction: column;
+            font-family: 'Inter', sans-serif;
+            max-height: 360px;
+        }
+
+        .comment-thread.open {
+            display: flex;
+        }
+
+        .comment-thread-header {
+            padding: 10px 12px;
+            font-size: 11px;
+            font-weight: 600;
+            color: #061D49;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .comment-thread-body {
+            flex: 1;
+            overflow-y: auto;
+            padding: 8px 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .comment-entry {
+            font-size: 11px;
+            line-height: 1.5;
+            color: #333;
+        }
+
+        .comment-entry .comment-author {
+            font-weight: 600;
+            font-size: 10px;
+        }
+
+        .comment-entry .comment-time {
+            font-size: 9px;
+            color: #999;
+        }
+
+        .comment-input-row {
+            display: flex;
+            gap: 4px;
+            padding: 8px;
+            border-top: 1px solid #eee;
+        }
+
+        .comment-input-row input {
+            flex: 1;
+            padding: 6px 8px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 11px;
+            font-family: 'Inter', sans-serif;
+            outline: none;
+        }
+
+        .comment-input-row button {
+            padding: 6px 10px;
+            background: #061D49;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        [data-field].has-comments {
+            background: rgba(255, 209, 0, 0.08);
+        }
+
+        /* ===== NAME MODAL ===== */
+        .name-modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .name-modal-box {
+            background: white;
+            padding: 32px;
+            border-radius: 12px;
+            text-align: center;
+            max-width: 360px;
+            width: 90%;
+        }
+
+        .name-modal-box h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            color: #061D49;
+            margin-bottom: 8px;
+        }
+
+        .name-modal-box p {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .name-modal-box input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 14px;
+            font-family: 'Inter', sans-serif;
+            text-align: center;
+            outline: none;
+            margin-bottom: 16px;
+        }
+
+        .name-modal-box input:focus {
+            border-color: #DF5E70;
+        }
+
+        .name-modal-box button {
+            padding: 10px 32px;
+            background: #061D49;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* ===== PRINT ===== */
         @media print {
-            .edit-toolbar {
+
+            .edit-toolbar,
+            .chat-fab,
+            .chat-panel,
+            .comment-icon,
+            .comment-thread,
+            .field-presence-tag,
+            .name-modal {
                 display: none !important;
             }
 
             [contenteditable] {
                 outline: none !important;
             }
+
+            [data-field].has-comments {
+                background: none !important;
+            }
         }
     </style>
 </head>
 
 <body>
+    <!-- NAME MODAL -->
+    <div class="name-modal" id="nameModal">
+        <div class="name-modal-box">
+            <h2>Welcome</h2>
+            <p>Enter your name to start collaborating</p>
+            <input type="text" id="nameInput" placeholder="Your name" autofocus>
+            <br>
+            <button onclick="submitName()">Join</button>
+        </div>
+    </div>
+
     <div class="page">
         <!-- HEADER -->
         <div class="header">
@@ -531,18 +952,19 @@
 
         <!-- HERO -->
         <div class="hero">
-            <div class="category" contenteditable="true">Student-Led Crowdfunding Initiative</div>
-            <h1 contenteditable="true">ARU × Change Please</h1>
-            <div class="subtitle" contenteditable="true">
+            <div class="category" contenteditable="true" data-field="hero-category">Student-Led Crowdfunding Initiative
+            </div>
+            <h1 contenteditable="true" data-field="hero-title">ARU × Change Please</h1>
+            <div class="subtitle" contenteditable="true" data-field="hero-subtitle">
                 What started as an MBA case study has become a student-led crowdfunding campaign
                 to fund barista training placements for people experiencing homelessness.
             </div>
         </div>
 
-        <!-- THE TRIANGLE -->
+        <!-- THE STORY -->
         <div class="story-section">
-            <div class="story-label" contenteditable="true">The Story</div>
-            <p contenteditable="true">
+            <div class="story-label" contenteditable="true" data-field="story-label">The Story</div>
+            <p contenteditable="true" data-field="story-body">
                 Through Dr Tabish Zaman's Developing a Proposition module (MOD007665), our MBA cohort
                 studied the full spectrum of social enterprise, from extractive for-profit models
                 to fully SDG-aligned, B Corp-certified enterprises like Change Please. Using Triple Bottom
@@ -561,32 +983,64 @@
                     fill="none" stroke="#DF5E70" stroke-width="3" stroke-linecap="round" />
             </svg>
             <div class="impact-item">
-                <div class="impact-label" contenteditable="true">The Problem</div>
-                <div class="impact-value" contenteditable="true">300,000</div>
-                <div class="impact-detail" contenteditable="true">households experiencing the worst forms of
+                <div class="impact-label" contenteditable="true" data-field="impact-1-label">The Problem</div>
+                <div class="impact-value" contenteditable="true" data-field="impact-1-value">300,000</div>
+                <div class="impact-detail" contenteditable="true" data-field="impact-1-detail">households experiencing
+                    the worst forms of
                     homelessness in England</div>
             </div>
             <div class="impact-item">
-                <div class="impact-label" contenteditable="true">The Programme</div>
-                <div class="impact-value" contenteditable="true">12 Weeks</div>
-                <div class="impact-detail" contenteditable="true">SCA-standard barista training with housing, therapy,
+                <div class="impact-label" contenteditable="true" data-field="impact-2-label">The Programme</div>
+                <div class="impact-value" contenteditable="true" data-field="impact-2-value">12 Weeks</div>
+                <div class="impact-detail" contenteditable="true" data-field="impact-2-detail">SCA-standard barista
+                    training with housing, therapy,
                     and employment support
                 </div>
             </div>
             <div class="impact-item">
-                <div class="impact-label" contenteditable="true">The Results</div>
-                <div class="impact-value" contenteditable="true">79%</div>
-                <div class="impact-detail" contenteditable="true">of graduates retain employment or education for 6+
+                <div class="impact-label" contenteditable="true" data-field="impact-3-label">The Results</div>
+                <div class="impact-value" contenteditable="true" data-field="impact-3-value">79%</div>
+                <div class="impact-detail" contenteditable="true" data-field="impact-3-detail">of graduates retain
+                    employment or education for 6+
                     months</div>
+            </div>
+        </div>
+
+        <!-- MOMENTUM (moved up) -->
+        <div class="momentum">
+            <div class="momentum-label" contenteditable="true" data-field="momentum-label">Progress</div>
+            <div class="momentum-grid">
+                <div class="momentum-item">
+                    <span class="momentum-check">✓</span>
+                    <span contenteditable="true" data-field="momentum-1">Industry contacts secured at Glasshouse
+                        networking event (VCs,
+                        charities, fundraisers)</span>
+                </div>
+                <div class="momentum-item">
+                    <span class="momentum-check">✓</span>
+                    <span contenteditable="true" data-field="momentum-2">Change Please toolkit and marketing manager
+                        access secured</span>
+                </div>
+                <div class="momentum-item">
+                    <span class="momentum-check">✓</span>
+                    <span contenteditable="true" data-field="momentum-3">AREA, MBA Director, and Dean of FBL aware and
+                        supportive</span>
+                </div>
+                <div class="momentum-item">
+                    <span class="momentum-check">✓</span>
+                    <span contenteditable="true" data-field="momentum-4">Full campaign proposal, pitch deck, and digital
+                        assets built</span>
+                </div>
             </div>
         </div>
 
         <!-- QUOTE -->
         <div class="quote-line">
-            <div class="quote-text" contenteditable="true">
+            <div class="quote-text" contenteditable="true" data-field="quote-text">
                 "I didn't realise how fulfilling a job being a barista is. Having a conversation in the morning with a
                 coffee, putting smiles on people's faces, is exactly the change I needed."
-                <div class="attribution" contenteditable="true">— Tae Chee, Change Please graduate (changeplease.org)
+                <div class="attribution" contenteditable="true" data-field="quote-attribution">— Tae Chee, Change Please
+                    graduate (changeplease.org)
                 </div>
             </div>
             <div class="sdg-icons">
@@ -600,66 +1054,49 @@
         <!-- THE ASK -->
         <div class="ask-bar">
             <div class="ask-item">
-                <div class="ask-label" contenteditable="true">Fundraising Target</div>
-                <div class="ask-value" contenteditable="true">£10–15K</div>
-                <div class="ask-detail" contenteditable="true">Direct to Change Please Foundation</div>
+                <div class="ask-label" contenteditable="true" data-field="ask-1-label">Fundraising Target</div>
+                <div class="ask-value" contenteditable="true" data-field="ask-1-value">£10–15K</div>
+                <div class="ask-detail" contenteditable="true" data-field="ask-1-detail">Direct to Change Please
+                    Foundation</div>
             </div>
             <div class="ask-item">
-                <div class="ask-label" contenteditable="true">What It Funds</div>
-                <div class="ask-value" contenteditable="true">Training</div>
-                <div class="ask-detail" contenteditable="true">Barista placements for people<br>experiencing
+                <div class="ask-label" contenteditable="true" data-field="ask-2-label">What It Funds</div>
+                <div class="ask-value" contenteditable="true" data-field="ask-2-value">Training</div>
+                <div class="ask-detail" contenteditable="true" data-field="ask-2-detail">Barista placements for
+                    people<br>experiencing
                     homelessness</div>
             </div>
             <div class="ask-item">
-                <div class="ask-label" contenteditable="true">Get Involved</div>
-                <div class="ask-value" contenteditable="true">Attend · Donate · Share</div>
-                <div class="ask-detail" contenteditable="true">Support our campaign and<br>help change a life</div>
+                <div class="ask-label" contenteditable="true" data-field="ask-3-label">Get Involved</div>
+                <div class="ask-value" contenteditable="true" data-field="ask-3-value">Attend · Donate · Share</div>
+                <div class="ask-detail" contenteditable="true" data-field="ask-3-detail">Support our campaign
+                    and<br>help change a life</div>
             </div>
         </div>
 
         <!-- THE PLAN -->
         <div class="plan-bar">
             <div class="plan-item">
-                <div class="plan-label" contenteditable="true">The Event</div>
-                <div class="plan-value" contenteditable="true">Campaign launch event</div>
-                <div class="plan-detail" contenteditable="true">ARU Cambridge · Date to be announced</div>
+                <div class="plan-label" contenteditable="true" data-field="plan-1-label">The Event</div>
+                <div class="plan-value" contenteditable="true" data-field="plan-1-value">Campaign launch event</div>
+                <div class="plan-detail" contenteditable="true" data-field="plan-1-detail">ARU Cambridge · Date to be
+                    announced</div>
             </div>
             <div class="plan-item">
-                <div class="plan-label" contenteditable="true">Guest Speaker</div>
-                <div class="plan-value" contenteditable="true">Change Please representative</div>
-                <div class="plan-detail" contenteditable="true">Real stories from the programme</div>
+                <div class="plan-label" contenteditable="true" data-field="plan-2-label">Guest Speaker</div>
+                <div class="plan-value" contenteditable="true" data-field="plan-2-value">Change Please representative
+                </div>
+                <div class="plan-detail" contenteditable="true" data-field="plan-2-detail">Real stories from the
+                    programme</div>
             </div>
             <div class="plan-item">
-                <div class="plan-label" contenteditable="true">Who's Invited</div>
-                <div class="plan-value" contenteditable="true">Industry contacts & students</div>
-                <div class="plan-detail" contenteditable="true">VCs, charities, fundraisers,<br>ARU community</div>
+                <div class="plan-label" contenteditable="true" data-field="plan-3-label">Who's Invited</div>
+                <div class="plan-value" contenteditable="true" data-field="plan-3-value">Industry contacts & students
+                </div>
+                <div class="plan-detail" contenteditable="true" data-field="plan-3-detail">VCs, charities,
+                    fundraisers,<br>ARU community</div>
             </div>
         </div>
-
-        <!-- MOMENTUM -->
-        <div class="momentum">
-            <div class="momentum-label" contenteditable="true">Progress</div>
-            <div class="momentum-grid">
-                <div class="momentum-item">
-                    <span class="momentum-check">✓</span>
-                    <span contenteditable="true">Industry contacts secured at Glasshouse networking event (VCs,
-                        charities, fundraisers)</span>
-                </div>
-                <div class="momentum-item">
-                    <span class="momentum-check">✓</span>
-                    <span contenteditable="true">Change Please toolkit and marketing manager access secured</span>
-                </div>
-                <div class="momentum-item">
-                    <span class="momentum-check">✓</span>
-                    <span contenteditable="true">AREA, MBA Director, and Dean of FBL aware and supportive</span>
-                </div>
-                <div class="momentum-item">
-                    <span class="momentum-check">✓</span>
-                    <span contenteditable="true">Full campaign proposal, pitch deck, and digital assets built</span>
-                </div>
-            </div>
-        </div>
-
 
         <!-- ARU WATERMARK -->
         <img src="../Proposal/assets/logos/aru-icon-blue.png" alt="" class="page-watermark">
@@ -667,31 +1104,463 @@
         <!-- FOOTER -->
         <div class="footer">
             <div>
-                <div class="team-label" contenteditable="true">Team</div>
-                <div class="team-names" contenteditable="true">
+                <div class="team-label" contenteditable="true" data-field="footer-team-label">Team</div>
+                <div class="team-names" contenteditable="true" data-field="footer-team-names">
                     Israel (Lead) · Vivian (Events) · Mohamed (Outreach) · Anita (Design) · Vignesh (Social)
                 </div>
             </div>
             <div class="contact">
-                <div class="name" contenteditable="true">Dr Tabish Zaman</div>
-                <div class="email" contenteditable="true">tabish.zaman@aru.ac.uk</div>
-                <div contenteditable="true"
+                <div class="name" contenteditable="true" data-field="footer-contact-name">Dr Tabish Zaman</div>
+                <div class="email" contenteditable="true" data-field="footer-contact-email">tabish.zaman@aru.ac.uk</div>
+                <div contenteditable="true" data-field="footer-partnership"
                     style="font-size: 7.5px; color: rgba(255,255,255,0.35); margin-top: 6px; letter-spacing: 0.1em; text-transform: uppercase;">
                     In partnership with Change Please</div>
             </div>
         </div>
     </div>
 
-    <!-- EDIT TOOLBAR -->
-    <div class="edit-toolbar">
-        <strong>✏️ Editable Version</strong>
-        <div style="display:flex; gap:10px;">
-            <button class="toggle-btn"
-                onclick="document.body.classList.toggle('zones-on'); this.textContent = document.body.classList.contains('zones-on') ? 'Hide Zones' : 'Show Zones'">Show
-                Zones</button>
-            <button class="print-btn" onclick="window.print()">🖨 Save as PDF</button>
+    <!-- CHAT FAB -->
+    <button class="chat-fab" id="chatFab" onclick="toggleChat()">
+        💬
+        <span class="badge" id="chatBadge">0</span>
+    </button>
+
+    <!-- CHAT PANEL -->
+    <div class="chat-panel" id="chatPanel">
+        <div class="chat-header">
+            <span>Team Chat</span>
+            <button class="close-chat" onclick="toggleChat()">✕</button>
+        </div>
+        <div class="chat-messages" id="chatMessages"></div>
+        <div class="chat-input-area">
+            <input type="text" id="chatInput" placeholder="Type a message..."
+                onkeydown="if(event.key==='Enter')sendChat()">
+            <button onclick="sendChat()">Send</button>
         </div>
     </div>
+
+    <!-- TOOLBAR -->
+    <div class="edit-toolbar">
+        <div class="toolbar-left">
+            <div class="presence-bar" id="presenceBar"></div>
+        </div>
+        <div class="toolbar-right">
+            <button class="toolbar-btn" id="modeToggle" onclick="toggleMode()">View Mode</button>
+            <button class="toolbar-btn" id="soundToggle" onclick="toggleSound()">🔔</button>
+            <button class="toolbar-btn"
+                onclick="document.body.classList.toggle('zones-on'); this.textContent = document.body.classList.contains('zones-on') ? 'Hide Zones' : 'Show Zones'">Show
+                Zones</button>
+            <button class="toolbar-btn print-btn" onclick="window.print()">🖨 Save as PDF</button>
+        </div>
+    </div>
+
+    <!-- FIREBASE SDK -->
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-database-compat.js"></script>
+
+    <script>
+        // ===== FIREBASE CONFIG =====
+        const firebaseConfig = {
+            apiKey: "AIzaSyAu0vK3bzcghtAEOYLbUlWYti08EkHGgcE",
+            authDomain: "aru-one-pager-c6692.firebaseapp.com",
+            databaseURL: "https://aru-one-pager-c6692-default-rtdb.firebaseio.com",
+            projectId: "aru-one-pager-c6692",
+            storageBucket: "aru-one-pager-c6692.firebasestorage.app",
+            messagingSenderId: "137761637025",
+            appId: "1:137761637025:web:9faa39a89ce9a7ddc3e6e0"
+        };
+
+        const app = firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+        const db = firebase.database();
+
+        // ===== STATE =====
+        let myUid = null;
+        let myName = localStorage.getItem('collab-name') || '';
+        let myColor = localStorage.getItem('collab-color') || '';
+        let soundEnabled = true;
+        let isViewMode = false;
+        let chatOpen = false;
+        let unreadCount = 0;
+        let initialLoad = true;
+        let editTimers = {};
+
+        const COLORS = ['#DF5E70', '#4CAF50', '#2196F3', '#FF9800', '#9C27B0', '#00BCD4', '#E91E63', '#8BC34A'];
+
+        // ===== SOUND =====
+        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        function playChime() {
+            if (!soundEnabled) return;
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+            osc.frequency.value = 880;
+            osc.type = 'sine';
+            gain.gain.setValueAtTime(0.08, audioCtx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.3);
+            osc.start(audioCtx.currentTime);
+            osc.stop(audioCtx.currentTime + 0.3);
+        }
+
+        function toggleSound() {
+            soundEnabled = !soundEnabled;
+            document.getElementById('soundToggle').textContent = soundEnabled ? '🔔' : '🔕';
+        }
+
+        // ===== NAME MODAL =====
+        function submitName() {
+            const input = document.getElementById('nameInput').value.trim();
+            if (!input) return;
+            myName = input;
+            myColor = COLORS[Math.floor(Math.random() * COLORS.length)];
+            localStorage.setItem('collab-name', myName);
+            localStorage.setItem('collab-color', myColor);
+            document.getElementById('nameModal').style.display = 'none';
+            initCollab();
+        }
+
+        document.getElementById('nameInput').addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') submitName();
+        });
+
+        if (myName) {
+            document.getElementById('nameModal').style.display = 'none';
+            if (!myColor) {
+                myColor = COLORS[Math.floor(Math.random() * COLORS.length)];
+                localStorage.setItem('collab-color', myColor);
+            }
+        }
+
+        // ===== AUTH + INIT =====
+        auth.signInAnonymously().then((cred) => {
+            myUid = cred.user.uid;
+            if (myName) initCollab();
+        });
+
+        function initCollab() {
+            if (!myUid) return;
+            setupPresence();
+            setupContentSync();
+            setupChat();
+            setupComments();
+            setupFieldPresence();
+        }
+
+        // ===== PRESENCE =====
+        function setupPresence() {
+            const myRef = db.ref('presence/' + myUid);
+            myRef.set({ name: myName, color: myColor, online: true });
+            myRef.onDisconnect().remove();
+
+            db.ref('presence').on('value', (snap) => {
+                const bar = document.getElementById('presenceBar');
+                bar.innerHTML = '';
+                const users = snap.val() || {};
+                const online = Object.entries(users).filter(([, u]) => u.online);
+                const MAX_SHOW = 4;
+
+                // Show self first, then others
+                const sorted = online.sort(([a], [b]) => {
+                    if (a === myUid) return -1;
+                    if (b === myUid) return 1;
+                    return 0;
+                });
+
+                sorted.slice(0, MAX_SHOW).forEach(([uid, u]) => {
+                    const isMe = uid === myUid;
+                    const badge = document.createElement('div');
+                    badge.className = 'presence-badge' + (isMe ? ' is-me' : '');
+                    badge.style.background = u.color || '#999';
+                    badge.textContent = u.name ? u.name.charAt(0).toUpperCase() : '?';
+                    badge.innerHTML += `<span class="tooltip">${isMe ? 'You' : (u.name || 'Anonymous')}</span>`;
+                    bar.appendChild(badge);
+                });
+
+                if (online.length > MAX_SHOW) {
+                    const overflow = document.createElement('div');
+                    overflow.className = 'presence-overflow';
+                    overflow.textContent = '+' + (online.length - MAX_SHOW);
+                    bar.appendChild(overflow);
+                }
+            });
+        }
+
+        // ===== CONTENT SYNC =====
+        function setupContentSync() {
+            const fields = document.querySelectorAll('[data-field]');
+
+            // Listen for remote changes
+            fields.forEach(el => {
+                const fieldId = el.getAttribute('data-field');
+                db.ref('content/' + fieldId).on('value', (snap) => {
+                    const data = snap.val();
+                    if (!data) return;
+                    if (data.uid === myUid) return; // skip own changes
+                    if (document.activeElement === el) return; // don't overwrite if user is editing
+                    el.innerHTML = data.html;
+                    if (!initialLoad) playChime();
+                });
+            });
+
+            // Send local changes
+            fields.forEach(el => {
+                const fieldId = el.getAttribute('data-field');
+                el.addEventListener('input', () => {
+                    clearTimeout(editTimers[fieldId]);
+                    editTimers[fieldId] = setTimeout(() => {
+                        db.ref('content/' + fieldId).set({
+                            html: el.innerHTML,
+                            uid: myUid,
+                            name: myName,
+                            time: firebase.database.ServerValue.TIMESTAMP
+                        });
+                    }, 300);
+                });
+            });
+
+            // Mark initial load complete after a moment
+            setTimeout(() => { initialLoad = false; }, 2000);
+        }
+
+        // ===== FIELD PRESENCE (who's editing what) =====
+        function setupFieldPresence() {
+            const fields = document.querySelectorAll('[data-field]');
+
+            fields.forEach(el => {
+                const fieldId = el.getAttribute('data-field');
+
+                el.addEventListener('focus', () => {
+                    db.ref('fieldPresence/' + fieldId + '/' + myUid).set({
+                        name: myName, color: myColor
+                    });
+                });
+
+                el.addEventListener('blur', () => {
+                    db.ref('fieldPresence/' + fieldId + '/' + myUid).remove();
+                });
+
+                // Listen for others editing this field
+                db.ref('fieldPresence/' + fieldId).on('value', (snap) => {
+                    // Remove old tags
+                    el.querySelectorAll('.field-presence-tag').forEach(t => t.remove());
+                    const editors = snap.val() || {};
+                    Object.entries(editors).forEach(([uid, u]) => {
+                        if (uid === myUid) return;
+                        const tag = document.createElement('div');
+                        tag.className = 'field-presence-tag';
+                        tag.style.background = u.color || '#999';
+                        tag.textContent = u.name + ' is editing';
+                        el.appendChild(tag);
+                    });
+                });
+            });
+
+            // Clean up on disconnect
+            db.ref('fieldPresence').once('value', (snap) => {
+                const all = snap.val() || {};
+                Object.keys(all).forEach(fieldId => {
+                    db.ref('fieldPresence/' + fieldId + '/' + myUid).onDisconnect().remove();
+                });
+            });
+        }
+
+        // ===== CHAT =====
+        function setupChat() {
+            db.ref('chat').orderByChild('time').limitToLast(100).on('child_added', (snap) => {
+                const msg = snap.val();
+                if (!msg) return;
+                addChatMessage(msg);
+                if (!initialLoad && msg.uid !== myUid) {
+                    playChime();
+                    if (!chatOpen) {
+                        unreadCount++;
+                        const badge = document.getElementById('chatBadge');
+                        badge.textContent = unreadCount;
+                        badge.style.display = 'flex';
+                    }
+                }
+            });
+        }
+
+        function addChatMessage(msg) {
+            const container = document.getElementById('chatMessages');
+            const div = document.createElement('div');
+            div.className = 'chat-msg' + (msg.uid === myUid ? ' mine' : '');
+            const time = msg.time ? new Date(msg.time).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) : '';
+            div.innerHTML = `
+                <div class="msg-meta">
+                    <span style="color: ${msg.color || '#333'}">${msg.name || 'Anonymous'}</span>
+                    <span class="msg-time">${time}</span>
+                </div>
+                <div class="msg-text">${escapeHtml(msg.text)}</div>
+            `;
+            container.appendChild(div);
+            container.scrollTop = container.scrollHeight;
+        }
+
+        function sendChat() {
+            const input = document.getElementById('chatInput');
+            const text = input.value.trim();
+            if (!text) return;
+            db.ref('chat').push({
+                name: myName,
+                color: myColor,
+                uid: myUid,
+                text: text,
+                time: firebase.database.ServerValue.TIMESTAMP
+            });
+            input.value = '';
+        }
+
+        function toggleChat() {
+            chatOpen = !chatOpen;
+            document.getElementById('chatPanel').classList.toggle('open', chatOpen);
+            document.getElementById('chatFab').style.display = chatOpen ? 'none' : 'flex';
+            if (chatOpen) {
+                unreadCount = 0;
+                document.getElementById('chatBadge').style.display = 'none';
+                document.getElementById('chatInput').focus();
+            }
+        }
+
+        // ===== INLINE COMMENTS =====
+        function setupComments() {
+            const fields = document.querySelectorAll('[data-field]');
+            fields.forEach(el => {
+                const fieldId = el.getAttribute('data-field');
+
+                // Add comment icon
+                const icon = document.createElement('button');
+                icon.className = 'comment-icon';
+                icon.textContent = '💬';
+                icon.onclick = (e) => {
+                    e.stopPropagation();
+                    toggleCommentThread(el, fieldId);
+                };
+                el.appendChild(icon);
+
+                // Listen for comments
+                db.ref('comments/' + fieldId).on('value', (snap) => {
+                    const comments = snap.val() || {};
+                    const count = Object.keys(comments).length;
+                    if (count > 0) {
+                        icon.classList.add('has-comments');
+                        icon.textContent = '💬 ' + count;
+                        el.classList.add('has-comments');
+                    } else {
+                        icon.classList.remove('has-comments');
+                        icon.textContent = '💬';
+                        el.classList.remove('has-comments');
+                    }
+                });
+            });
+
+            // Close threads on outside click
+            document.addEventListener('click', (e) => {
+                if (!e.target.closest('.comment-thread') && !e.target.closest('.comment-icon')) {
+                    document.querySelectorAll('.comment-thread.open').forEach(t => t.classList.remove('open'));
+                }
+            });
+        }
+
+        function toggleCommentThread(el, fieldId) {
+            let thread = document.getElementById('thread-' + fieldId);
+            if (thread) {
+                const isOpen = thread.classList.contains('open');
+                document.querySelectorAll('.comment-thread.open').forEach(t => t.classList.remove('open'));
+                if (!isOpen) {
+                    positionThread(thread, el);
+                    thread.classList.add('open');
+                }
+                return;
+            }
+
+            thread = document.createElement('div');
+            thread.id = 'thread-' + fieldId;
+            thread.className = 'comment-thread open';
+            thread.innerHTML = `
+                <div class="comment-thread-header">
+                    <span>Comments</span>
+                    <button style="background:none;border:none;cursor:pointer;font-size:14px;" onclick="this.closest('.comment-thread').classList.remove('open')">✕</button>
+                </div>
+                <div class="comment-thread-body" id="comments-${fieldId}"></div>
+                <div class="comment-input-row">
+                    <input type="text" placeholder="Add a comment..." onkeydown="if(event.key==='Enter')addComment('${fieldId}',this)">
+                    <button onclick="addComment('${fieldId}',this.previousElementSibling)">Add</button>
+                </div>
+            `;
+            document.body.appendChild(thread);
+            positionThread(thread, el);
+
+            // Load existing comments
+            db.ref('comments/' + fieldId).on('child_added', (snap) => {
+                const c = snap.val();
+                const body = document.getElementById('comments-' + fieldId);
+                if (!body) return;
+                const entry = document.createElement('div');
+                entry.className = 'comment-entry';
+                const time = c.time ? new Date(c.time).toLocaleString([], { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' }) : '';
+                entry.innerHTML = `<span class="comment-author" style="color:${c.color || '#333'}">${c.name || 'Anonymous'}</span> <span class="comment-time">${time}</span><br>${escapeHtml(c.text)}`;
+                body.appendChild(entry);
+                body.scrollTop = body.scrollHeight;
+                if (!initialLoad && c.uid !== myUid) playChime();
+            });
+
+            thread.addEventListener('click', (e) => e.stopPropagation());
+        }
+
+        function positionThread(thread, el) {
+            const rect = el.getBoundingClientRect();
+            const threadWidth = 300;
+            let left = rect.right + 10;
+            if (left + threadWidth > window.innerWidth) {
+                left = rect.left - threadWidth - 10;
+            }
+            if (left < 10) left = 10;
+            let top = rect.top;
+            if (top + 360 > window.innerHeight - 60) {
+                top = window.innerHeight - 420;
+            }
+            if (top < 10) top = 10;
+            thread.style.left = left + 'px';
+            thread.style.top = top + 'px';
+        }
+
+        function addComment(fieldId, input) {
+            const text = input.value.trim();
+            if (!text) return;
+            db.ref('comments/' + fieldId).push({
+                name: myName,
+                color: myColor,
+                uid: myUid,
+                text: text,
+                time: firebase.database.ServerValue.TIMESTAMP
+            });
+            input.value = '';
+        }
+
+        // ===== VIEW/EDIT MODE =====
+        function toggleMode() {
+            isViewMode = !isViewMode;
+            document.body.classList.toggle('view-mode', isViewMode);
+            const btn = document.getElementById('modeToggle');
+            btn.textContent = isViewMode ? 'Edit Mode' : 'View Mode';
+            btn.classList.toggle('active', isViewMode);
+
+            document.querySelectorAll('[contenteditable]').forEach(el => {
+                el.setAttribute('contenteditable', isViewMode ? 'false' : 'true');
+            });
+        }
+
+        // ===== UTILITY =====
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+    </script>
 </body>
 
 </html>
