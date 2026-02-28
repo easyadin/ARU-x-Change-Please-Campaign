@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARU × Change Please — Academic Impact</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        @page {
+            size: A4 portrait;
+            margin: 0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #111;
+            padding: 40px;
+        }
+
+        .page {
+            width: 210mm;
+            height: 297mm;
+            margin: 0 auto;
+            background: #FFFFFF;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+            overflow: hidden;
+        }
+
+        @media print {
+            body {
+                padding: 0;
+                background: none;
+            }
+
+            .page {
+                margin: 0;
+                box-shadow: none;
+            }
+        }
+
+        /* ===== HEADER ===== */
+        .header {
+            background: #061D49;
+            padding: 28px 48px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header img {
+            height: 48px;
+        }
+
+        .header .header-right {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 6px;
+        }
+
+        .header .doc-label {
+            font-size: 9px;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .header .cp-logo {
+            height: 28px;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            background: #061D49;
+            padding: 6px 48px 0;
+            margin-top: -1px;
+        }
+
+        .hero .category {
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #FFD100;
+            margin-bottom: 12px;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 30px;
+            font-weight: 400;
+            color: #FFFFFF;
+            line-height: 1.25;
+            margin-bottom: 12px;
+        }
+
+        .hero .subtitle {
+            font-size: 12px;
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.6;
+            max-width: 520px;
+        }
+
+        /* ===== MODULE CONTEXT ===== */
+        .module-section {
+            padding: 14px 48px 8px;
+        }
+
+        .section-label {
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #061D49;
+            margin-bottom: 8px;
+            padding-bottom: 4px;
+            border-bottom: 2px solid #FFD100;
+            display: inline-block;
+        }
+
+        .module-section p {
+            font-size: 10.5px;
+            font-weight: 400;
+            color: #444;
+            line-height: 1.7;
+        }
+
+        /* ===== JOURNEY TIMELINE ===== */
+        .journey {
+            padding: 8px 48px 6px;
+        }
+
+        .journey-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6px 16px;
+        }
+
+        .journey-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            padding: 6px 10px;
+            background: #F8F6F0;
+            border-radius: 4px;
+        }
+
+        .journey-step {
+            font-size: 9px;
+            font-weight: 700;
+            color: #FFD100;
+            background: #061D49;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        .journey-content {
+            flex: 1;
+        }
+
+        .journey-content strong {
+            font-size: 10px;
+            font-weight: 600;
+            color: #061D49;
+            display: block;
+            line-height: 1.1;
+            margin-bottom: 0;
+        }
+
+        .journey-content span {
+            display: block;
+            font-size: 8.5px;
+            color: #666;
+            line-height: 1.45;
+            margin-top: 4px;
+        }
+
+        /* ===== SKILLS DEVELOPED ===== */
+        .skills-section {
+            padding: 12px 48px 8px;
+        }
+
+        .skills-bar {
+            padding: 16px 20px;
+            background: #061D49;
+            border-radius: 4px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 16px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skills-bar .watermark {
+            position: absolute;
+            top: 50%;
+            right: -30px;
+            transform: translateY(-50%);
+            width: 180px;
+            height: 180px;
+            opacity: 0.06;
+            pointer-events: none;
+        }
+
+        .skill-item .skill-label {
+            font-size: 9px;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #FFD100;
+            margin-bottom: 6px;
+        }
+
+        .skill-item .skill-detail {
+            font-size: 9.5px;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.75);
+            line-height: 1.5;
+        }
+
+        /* ===== EVIDENCE OF LEARNING ===== */
+        .evidence-section {
+            padding: 12px 48px 8px;
+        }
+
+        .evidence-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6px;
+        }
+
+        .evidence-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        .evidence-check {
+            color: #DF5E70;
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 1.4;
+            flex-shrink: 0;
+        }
+
+        .evidence-item span {
+            font-size: 10.5px;
+            color: #444;
+            line-height: 1.5;
+        }
+
+        /* ===== REFLECTION QUOTE ===== */
+        .reflection {
+            margin: 6px 48px;
+            padding: 8px 0 8px 14px;
+            border-left: 3px solid #DF5E70;
+        }
+
+        .reflection .quote-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 11px;
+            font-style: italic;
+            color: #444;
+            line-height: 1.6;
+        }
+
+        .reflection .attribution {
+            font-family: 'Inter', sans-serif;
+            font-style: normal;
+            font-size: 8.5px;
+            font-weight: 600;
+            color: #DF5E70;
+            margin-top: 4px;
+        }
+
+
+        /* ===== PAGE WATERMARK ===== */
+        .page-watermark {
+            position: absolute;
+            bottom: -40px;
+            right: 20px;
+            width: 220px;
+            height: auto;
+            opacity: 0.04;
+            pointer-events: none;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #061D49;
+            padding: 14px 48px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer .team-label {
+            font-size: 8px;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.4);
+            margin-bottom: 4px;
+        }
+
+        .footer .team-names {
+            font-size: 8.5px;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+        }
+
+        .footer .contact {
+            text-align: right;
+            flex-shrink: 0;
+        }
+
+        .footer .contact .name {
+            font-size: 9px;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 2px;
+        }
+
+        .footer .contact .email {
+            font-size: 8px;
+            color: #FFD100;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page">
+
+        <!-- HEADER -->
+        <div class="header">
+            <img src="../Proposal/assets/logos/aru-full.png" alt="Anglia Ruskin University">
+            <img src="assets/cp-logo-transparent.png" alt="Change Please Coffee" class="cp-logo">
+        </div>
+
+        <!-- HERO -->
+        <div class="hero">
+            <div class="category">Student-Led Crowdfunding Initiative</div>
+            <h1>ARU × Change Please</h1>
+            <div class="subtitle">
+                What started as an MBA case study has become a student-led crowdfunding campaign
+                to fund barista training placements for people experiencing homelessness.
+            </div>
+        </div>
+
+        <!-- IMPACT BAR -->
+        <div class="impact-bar"
+            style="margin: 0; padding: 16px 48px; background: #061D49; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; position: relative;">
+            <svg style="position: absolute; top: 50%; right: -20px; transform: translateY(-50%); width: 260px; height: 260px; opacity: 0.05; pointer-events: none;"
+                viewBox="0 0 100 100">
+                <path
+                    d="M50 10 C70 10, 90 30, 90 50 C90 70, 70 90, 50 90 C30 90, 15 75, 15 55 C15 40, 28 28, 45 28 C58 28, 68 38, 68 50 C68 60, 60 68, 50 68 C42 68, 36 62, 36 54 C36 48, 41 44, 48 44"
+                    fill="none" stroke="#DF5E70" stroke-width="3" stroke-linecap="round" />
+            </svg>
+            <div>
+                <div
+                    style="font-size: 8px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #FFD100; margin-bottom: 4px;">
+                    The Problem</div>
+                <div
+                    style="font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 500; color: #FFFFFF; line-height: 1;">
+                    300,000</div>
+                <div style="font-size: 8.5px; color: rgba(255,255,255,0.6); margin-top: 4px; line-height: 1.3;">
+                    households experiencing the worst forms of homelessness in England</div>
+            </div>
+            <div>
+                <div
+                    style="font-size: 8px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #FFD100; margin-bottom: 4px;">
+                    The Programme</div>
+                <div
+                    style="font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 500; color: #FFFFFF; line-height: 1;">
+                    12 Weeks</div>
+                <div style="font-size: 8.5px; color: rgba(255,255,255,0.6); margin-top: 4px; line-height: 1.3;">
+                    SCA-standard barista training with housing, therapy, and employment support</div>
+            </div>
+            <div>
+                <div
+                    style="font-size: 8px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #FFD100; margin-bottom: 4px;">
+                    The Results</div>
+                <div
+                    style="font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 500; color: #FFFFFF; line-height: 1;">
+                    82%</div>
+                <div style="font-size: 8.5px; color: rgba(255,255,255,0.6); margin-top: 4px; line-height: 1.3;">success
+                    rate across 3,283 lives changed</div>
+            </div>
+        </div>
+
+        <!-- QUOTE + SDGs -->
+        <div style="margin: 24px 48px 8px; display: flex; align-items: flex-start; gap: 16px;">
+            <div class="reflection" style="margin: 0; flex: 1;">
+                <div class="quote-text">
+                    "I didn't realise how fulfilling a job being a barista is. Having a conversation in the morning with
+                    a coffee, putting smiles on people's faces, is exactly the change I needed."
+                </div>
+                <div class="attribution">Tae Chee, Change Please graduate</div>
+            </div>
+            <div style="display: flex; gap: 4px; flex-shrink: 0; padding-top: 4px;">
+                <img src="../Proposal/assets/images/sdg-01.png" alt="SDG 1" width="36" height="36">
+                <img src="../Proposal/assets/images/sdg-08.png" alt="SDG 8" width="36" height="36">
+                <img src="../Proposal/assets/images/sdg-10.png" alt="SDG 10" width="36" height="36">
+                <img src="../Proposal/assets/images/sdg-11.png" alt="SDG 11" width="36" height="36">
+            </div>
+        </div>
+
+        <!-- MODULE CONTEXT -->
+        <div class="module-section">
+            <div class="section-label">The Foundation</div>
+            <p>
+                MOD007665 (Developing a Proposition), led by Dr Tabish Zaman, challenges MBA students
+                to analyse social enterprise models using frameworks including the Triple Bottom Line,
+                B Corp certification standards, and SDG alignment. Our cohort's subject was Change
+                Please, a B Corp certified social enterprise that immediately lifts people out of
+                homelessness through barista training, the living wage, accommodation support, and
+                mental wellbeing services. The model gave us a real-world proposition worth studying
+                in depth.
+            </p>
+        </div>
+
+        <!-- THE JOURNEY -->
+        <div class="journey">
+            <div class="section-label">The Journey</div>
+            <div class="journey-grid">
+                <div class="journey-item">
+                    <div class="journey-step">1</div>
+                    <div class="journey-content">
+                        <strong>Module Analysis</strong>
+                        <span>Triple Bottom Line and B Corp assessment of Change Please's operating model</span>
+                    </div>
+                </div>
+                <div class="journey-item">
+                    <div class="journey-step">2</div>
+                    <div class="journey-content">
+                        <strong>Site Visit</strong>
+                        <span>Visited Change Please to see the social enterprise model in action firsthand</span>
+                    </div>
+                </div>
+                <div class="journey-item">
+                    <div class="journey-step">3</div>
+                    <div class="journey-content">
+                        <strong>Decision to Act</strong>
+                        <span>Team chose to move beyond the assignment into live campaign execution</span>
+                    </div>
+                </div>
+                <div class="journey-item">
+                    <div class="journey-step">4</div>
+                    <div class="journey-content">
+                        <strong>Stakeholder Engagement</strong>
+                        <span>Secured support from Change Please HQ, AREA, Dean of FBL, and MBA Director</span>
+                    </div>
+                </div>
+                <div class="journey-item">
+                    <div class="journey-step">5</div>
+                    <div class="journey-content">
+                        <strong>Industry Networking</strong>
+                        <span>Attended Glasshouse events, connecting with VCs, charities, and fundraisers</span>
+                    </div>
+                </div>
+                <div class="journey-item">
+                    <div class="journey-step">6</div>
+                    <div class="journey-content">
+                        <strong>Campaign Build and Execution</strong>
+                        <span>Built proposal, pitch deck, and digital assets. Now executing outreach, events, and
+                            fundraising</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SKILLS DEVELOPED -->
+        <div class="skills-section">
+            <div class="section-label">Applied Skills</div>
+            <div class="skills-bar">
+                <svg class="watermark" viewBox="0 0 100 100">
+                    <path
+                        d="M50 10 C70 10, 90 30, 90 50 C90 70, 70 90, 50 90 C30 90, 15 75, 15 55 C15 40, 28 28, 45 28 C58 28, 68 38, 68 50 C68 60, 60 68, 50 68 C42 68, 36 62, 36 54 C36 48, 41 44, 48 44"
+                        fill="none" stroke="#DF5E70" stroke-width="3" stroke-linecap="round" />
+                </svg>
+                <div class="skill-item">
+                    <div class="skill-label">Enterprise Strategy</div>
+                    <div class="skill-detail">Translated academic frameworks (TBL, B Corp, SDG mapping) into a live
+                        fundraising proposition with measurable targets</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-label">Stakeholder Management</div>
+                    <div class="skill-detail">Navigated relationships across university leadership, a national charity,
+                        industry professionals, and press</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-label">Campaign Execution</div>
+                    <div class="skill-detail">End-to-end ownership: branding, digital assets, event planning, outreach
+                        strategy, and fundraising mechanics</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- EVIDENCE OF LEARNING -->
+        <div class="evidence-section">
+            <div class="section-label">Evidence of Learning</div>
+            <div class="evidence-grid">
+                <div class="evidence-item">
+                    <span class="evidence-check">✓</span>
+                    <span>Secured partnership with Change Please marketing team and Foundation</span>
+                </div>
+                <div class="evidence-item">
+                    <span class="evidence-check">✓</span>
+                    <span>Built professional network through Glasshouse and Entrepreneur in Residence connections</span>
+                </div>
+                <div class="evidence-item">
+                    <span class="evidence-check">✓</span>
+                    <span>Produced campaign proposal and pitch deck independently</span>
+                </div>
+                <div class="evidence-item">
+                    <span class="evidence-check">✓</span>
+                    <span>Developed multi-channel campaign strategy spanning digital, events, and direct outreach</span>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- WATERMARK -->
+        <img src="../Proposal/assets/logos/aru-icon-blue.png" alt="" class="page-watermark">
+
+        <!-- FOOTER -->
+        <div class="footer">
+            <div>
+                <div class="team-label">Team</div>
+                <div class="team-names">
+                    Israel (Lead) · Vivian (Events) · Mohamed (Outreach) · Anita (Design) · Vignesh (Social)
+                </div>
+            </div>
+            <div class="contact">
+                <div class="name">Dr Tabish Zaman</div>
+                <div class="email">tabish.zaman@aru.ac.uk</div>
+                <div
+                    style="font-size: 7.5px; color: rgba(255,255,255,0.35); margin-top: 6px; letter-spacing: 0.1em; text-transform: uppercase;">
+                    MOD007665 · Developing a Proposition
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

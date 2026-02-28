@@ -1,0 +1,1556 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARU × Change Please - Campaign Playbook</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --navy: #061D49;
+            --gold: #FFD100;
+            --coral: #DF5E70;
+            --white: #FFFFFF;
+            --off-white: #F8F7F4;
+            --text: #1a1a2e;
+            --text-light: #555;
+            --border: #e0ddd5;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #1a1a2e;
+            color: var(--text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+        }
+
+        .playbook {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--white);
+        }
+
+        /* ===== COVER ===== */
+        .cover {
+            background: var(--navy);
+            padding: 60px 60px 48px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cover::after {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 500px;
+            height: 500px;
+            border: 2px solid rgba(223, 94, 112, 0.06);
+            border-radius: 50%;
+        }
+
+        .cover-label {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 16px;
+        }
+
+        .cover h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 46px;
+            font-weight: 500;
+            color: var(--white);
+            line-height: 1.1;
+            margin-bottom: 12px;
+        }
+
+        .cover h1 span {
+            color: var(--gold);
+        }
+
+        .cover-subtitle {
+            font-size: 16px;
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.65);
+            max-width: 750px;
+            line-height: 1.6;
+            margin-bottom: 32px;
+        }
+
+        .cover-meta {
+            display: flex;
+            gap: 32px;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 12px;
+        }
+
+        .cover-meta-item {
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        .cover-meta-item strong {
+            display: block;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 500;
+            margin-bottom: 2px;
+        }
+
+        /* ===== TABLE OF CONTENTS ===== */
+        .toc {
+            background: var(--off-white);
+            padding: 40px 60px;
+        }
+
+        .toc h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            color: var(--navy);
+            margin-bottom: 20px;
+        }
+
+        .toc-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .toc-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 14px;
+            border-radius: 6px;
+            text-decoration: none;
+            color: var(--text);
+            font-size: 13px;
+            font-weight: 500;
+            transition: background 0.15s;
+        }
+
+        .toc-item:hover {
+            background: rgba(6, 29, 73, 0.04);
+        }
+
+        .toc-badge {
+            width: 28px;
+            height: 28px;
+            background: var(--navy);
+            color: var(--gold);
+            font-size: 10px;
+            font-weight: 700;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        /* ===== OVERVIEW ===== */
+        .overview {
+            padding: 48px 60px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .overview h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 26px;
+            color: var(--navy);
+            margin-bottom: 16px;
+        }
+
+        .overview p {
+            font-size: 14px;
+            color: var(--text-light);
+            line-height: 1.7;
+            margin-bottom: 12px;
+        }
+
+        /* ===== CONNECTION MAP ===== */
+        .flow-map {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr auto 1fr;
+            align-items: center;
+            gap: 0;
+            margin: 28px 0 16px;
+        }
+
+        .flow-node {
+            background: var(--navy);
+            color: var(--white);
+            padding: 14px 16px;
+            border-radius: 6px;
+            text-align: center;
+            font-size: 12px;
+            font-weight: 500;
+            line-height: 1.4;
+        }
+
+        .flow-node small {
+            display: block;
+            color: var(--gold);
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+
+        .flow-arrow {
+            text-align: center;
+            color: var(--coral);
+            font-size: 20px;
+            padding: 0 4px;
+        }
+
+        /* ===== STAKEHOLDER BRIEF ===== */
+        .brief {
+            padding: 48px 60px;
+            border-bottom: 3px solid var(--navy);
+        }
+
+        .brief-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 24px;
+        }
+
+        .brief-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--navy);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--white);
+            letter-spacing: 0.03em;
+            flex-shrink: 0;
+        }
+
+        .brief-title h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 26px;
+            color: var(--navy);
+            line-height: 1.2;
+        }
+
+        .brief-title .subtitle {
+            font-size: 13px;
+            color: var(--coral);
+            font-weight: 500;
+            margin-top: 2px;
+        }
+
+        /* ===== YOUR ROLE BOX ===== */
+        .role-box {
+            background: var(--navy);
+            padding: 20px 24px;
+            border-radius: 6px;
+            margin-bottom: 24px;
+        }
+
+        .role-box h3 {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 6px;
+        }
+
+        .role-box p {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.6;
+        }
+
+        /* ===== ACTION LIST ===== */
+        .actions-label {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--coral);
+            margin-bottom: 12px;
+        }
+
+        .action-list {
+            list-style: none;
+            margin-bottom: 24px;
+        }
+
+        .action-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        .action-list li:last-child {
+            border-bottom: none;
+        }
+
+        .action-num {
+            width: 24px;
+            height: 24px;
+            background: var(--off-white);
+            border: 2px solid var(--navy);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--navy);
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        .action-content strong {
+            color: var(--navy);
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .action-detail {
+            color: var(--text-light);
+            font-size: 12.5px;
+        }
+
+        /* ===== FITS IN BOX ===== */
+        .fits-box {
+            background: var(--off-white);
+            padding: 16px 20px;
+            border-radius: 6px;
+            border-left: 3px solid var(--gold);
+            margin-bottom: 24px;
+        }
+
+        .fits-box h4 {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--navy);
+            margin-bottom: 6px;
+        }
+
+        .fits-box p {
+            font-size: 13px;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* ===== REPORT BACK ===== */
+        .report-box {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 14px 20px;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+        }
+
+        .report-box .label {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--coral);
+            white-space: nowrap;
+        }
+
+        .report-box .contact-info {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 14px;
+        }
+
+        .report-box .contact-name {
+            color: var(--navy);
+            font-weight: 600;
+        }
+
+        .report-box .contact-email a {
+            color: var(--navy);
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 12px;
+        }
+
+        .report-box .contact-email a:hover {
+            text-decoration: underline;
+        }
+
+        /* ===== SCRIPT BOX ===== */
+        .script-box {
+            background: var(--white);
+            border-left: 3px solid var(--coral);
+            padding: 14px 18px;
+            margin-top: 8px;
+            font-size: 13px;
+            color: var(--text);
+            line-height: 1.6;
+            font-style: italic;
+        }
+
+        .script-label {
+            font-style: normal;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--coral);
+            margin-bottom: 6px;
+        }
+
+        /* ===== TEAM MEMBER CARDS ===== */
+        .member-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .member-card {
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 20px;
+        }
+
+        .member-card .name {
+            font-weight: 600;
+            font-size: 15px;
+            color: var(--navy);
+            margin-bottom: 2px;
+        }
+
+        .member-card .role {
+            font-size: 11px;
+            color: var(--coral);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 10px;
+        }
+
+        .member-checklist {
+            list-style: none;
+        }
+
+        .member-checklist li {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            font-size: 12px;
+            color: var(--text-light);
+            padding: 4px 0;
+            line-height: 1.4;
+        }
+
+        .member-checklist li::before {
+            content: '☐';
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        .member-checklist li.done::before {
+            content: '☑';
+            color: var(--navy);
+        }
+
+        /* ===== CLOSING ===== */
+        .closing {
+            background: var(--navy);
+            padding: 40px 60px;
+            text-align: center;
+        }
+
+        .closing p {
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.5);
+            font-style: italic;
+            line-height: 1.6;
+        }
+
+        .closing .lead-info {
+            margin-top: 24px;
+            font-family: 'Inter', sans-serif;
+            font-style: normal;
+        }
+
+        .closing .lead-info strong {
+            display: block;
+            color: var(--gold);
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+
+        .closing .lead-info span {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 14px;
+        }
+
+        .cp-link {
+            color: var(--coral);
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .cp-link:hover {
+            text-decoration: underline;
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+
+            .playbook {
+                max-width: 100%;
+                box-shadow: none;
+            }
+
+            .brief {
+                break-inside: avoid;
+            }
+
+            .role-box,
+            .fits-box,
+            .report-box,
+            .member-card {
+                break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="playbook">
+
+        <!-- ============ COVER ============ -->
+        <div class="cover">
+            <div class="cover-label">Campaign Playbook</div>
+            <h1>ARU × <span>Change Please</span></h1>
+            <div class="cover-subtitle">
+                A crowdfunding campaign raising £10,000 to fund barista training placements for people experiencing
+                homelessness. This document maps out the strategy, the roles, and the events so everyone involved
+                can lead their part.
+            </div>
+            <div class="cover-meta">
+                <div class="cover-meta-item">
+                    <strong>Target</strong>£10,000
+                </div>
+                <div class="cover-meta-item">
+                    <strong>Supervisor</strong>Dr Tabish Zaman
+                </div>
+                <div class="cover-meta-item">
+                    <strong>Status</strong>Planning
+                </div>
+            </div>
+        </div>
+
+        <!-- ============ START HERE ============ -->
+        <div class="overview" id="overview">
+            <h2>Start Here</h2>
+            <p>
+                This campaign started as a case study. A group of MBA students at ARU, supervised by Dr Tabish
+                Zaman, studied <a href="https://changeplease.org/about" target="_blank" class="cp-link">Change
+                    Please Foundation</a>, a B Corp that runs 12-week training programmes for people experiencing
+                homelessness. They visited the operation and met graduates who had gone from rough sleeping to
+                living-wage jobs, stable housing, and ongoing support. 82% of graduates stay employed, and 3,283
+                people have been through the programme.
+            </p>
+            <p>
+                300,000 households in England are still in the worst forms of homelessness, and without a route
+                to stable income, people cycle through temporary support and end up back in the same situation.
+                Change Please offers that route, through employment with dignity rather than temporary relief.
+            </p>
+            <p>
+                We decided this was worth more than a case study, and we are raising £10,000 to fund training
+                placements through Change Please by telling this story and giving people a way to be part of it.
+            </p>
+        </div>
+
+        <!-- ============ TABLE OF CONTENTS ============ -->
+        <div class="toc">
+            <h2>Find Your Section</h2>
+            <div class="toc-grid">
+                <a href="#events" class="toc-item">
+                    <div class="toc-badge">EV</div> Events
+                </a>
+                <a href="#catering" class="toc-item">
+                    <div class="toc-badge">CA</div> Catering
+                </a>
+                <a href="#content" class="toc-item">
+                    <div class="toc-badge">PH</div> Content & Photography
+                </a>
+
+                <a href="#timeline" class="toc-item">
+                    <div class="toc-badge">TL</div> Timeline
+                </a>
+                <a href="#su" class="toc-item">
+                    <div class="toc-badge">SU</div> Students' Union
+                </a>
+                <a href="#changeplease" class="toc-item">
+                    <div class="toc-badge">CP</div> Change Please Marketing
+                </a>
+                <a href="#jo" class="toc-item">
+                    <div class="toc-badge">EiR</div> Entrepreneurs in Residence
+                </a>
+                <a href="#faculty" class="toc-item">
+                    <div class="toc-badge">F</div> Faculty & University
+                </a>
+                <a href="#press" class="toc-item">
+                    <div class="toc-badge">PR</div> Press & Media
+                </a>
+                <a href="#societies" class="toc-item">
+                    <div class="toc-badge">S</div> Societies
+                </a>
+                <a href="#dod" class="toc-item">
+                    <div class="toc-badge">DD</div> Double or Divide
+                </a>
+                <a href="#podcast" class="toc-item">
+                    <div class="toc-badge">BB</div> Builders of the Broken Bazaar
+                </a>
+                <a href="#team" class="toc-item">
+                    <div class="toc-badge">T</div> Team
+                </a>
+            </div>
+        </div>
+
+        <!-- ============ BRIEF: STUDENTS' UNION ============ -->
+        <div class="brief" id="su">
+            <div class="brief-header">
+                <div class="brief-icon">SU</div>
+                <div class="brief-title">
+                    <h2>Students' Union</h2>
+                    <div class="subtitle">Amplification & Campus Reach</div>
+                </div>
+            </div>
+
+            <div class="role-box">
+                <h3>Your Role in This Campaign</h3>
+                <p>We're running this campaign through channels students already trust and follow, and
+                    the SU connects students across every faculty.</p>
+            </div>
+
+            <div class="actions-label">What We're Proposing</div>
+            <ul class="action-list">
+                <li>
+                    <div class="action-num">1</div>
+                    <div class="action-content">
+                        <strong>Help us shape how this campaign reaches students</strong>
+                        <div class="action-detail">You know what works on your channels and what doesn't.
+                            We'd love your input on timing, format, and how best to present this to
+                            your audience.</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="action-num">2</div>
+                    <div class="action-content">
+                        <strong>Share our campaign content on your Instagram</strong>
+                        <div class="action-detail">We have ready-to-go stories and posts we can send your way,
+                            designed for your channels.</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="action-num">3</div>
+                    <div class="action-content">
+                        <strong>Feature the campaign in your newsletter</strong>
+                        <div class="action-detail">We'll send you a short write-up (2-3 paragraphs) and a
+                            graphic. It can go straight into the next edition with the JustGiving link.</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="action-num">4</div>
+                    <div class="action-content">
+                        <strong>Help promote our two events</strong>
+                        <div class="action-detail">We're planning two events as part of the campaign.
+                            Details are still being confirmed and we'll keep you informed as they take shape.
+                            More in the <a href="#events" style="color: var(--coral);">Events section</a>.</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="action-num">5</div>
+                    <div class="action-content">
+                        <strong>Connect us with societies</strong>
+                        <div class="action-detail">Societies in entrepreneurship, volunteering, social justice,
+                            or business that might want to support or run their own activity under the
+                            campaign.</div>
+                    </div>
+                </li>
+            </ul>
+
+            <div class="report-box">
+                <div class="label">Contact</div>
+                <div class="contact-info">
+                    <span class="contact-name">Anita</span>
+                    <span class="contact-email">· <a
+                            href="mailto:AS3586@student.aru.ac.uk">AS3586@student.aru.ac.uk</a></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============ BRIEF: CHANGE PLEASE MARKETING ============ -->
+        <div class="brief" id="changeplease">
+            <div class="brief-header">
+                <div class="brief-icon">CP</div>
+                <div class="brief-title">
+                    <h2>Change Please Marketing</h2>
+                    <div class="subtitle">Content, Speakers & Co-Promotion</div>
+                </div>
+            </div>
+
+            <div class="role-box">
+                <h3>Your Role in This Campaign</h3>
+                <p>This campaign introduces Change Please to an audience that hasn't encountered it
+                    before: students, faculty, and the wider Cambridge community. The content, stories, and
+                    credibility come from you. All funds raised go directly to the Change Please Foundation.</p>
+            </div>
+
+            <div class="actions-label">What We're Proposing</div>
+            <ul class="action-list">
+                <li>
+                    <div class="action-num">1</div>
+                    <div class="action-content">
+                        <strong>Co-create campaign content</strong>
+                        <div class="action-detail">We'd love to work together to curate what gets shared on
+                            Change Please channels. Your audience reaches people outside the university
+                            entirely, which is how the campaign travels beyond ARU.</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="action-num">2</div>
+                    <div class="action-content">
+                        <strong>Provide a guest speaker for our launch event</strong>
+                        <div class="action-detail">A Change Please speaker (a graduate, a programme lead, or
+                            anyone who can tell the story firsthand) would be powerful. The event is tentative
+                            and we'll confirm with lead time. More in the
+                            <a href="#events" style="color: var(--coral);">Events section</a>.
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="action-num">3</div>
+                    <div class="action-content">
+                        <strong>Share graduate stories and photos for campaign content</strong>
+                        <div class="action-detail">We've already used Tae Chee's testimony (with permission from
+                            the toolkit). Any additional stories, photos, or video clips you'd like featured
+                            would make our social posts and event materials stronger.</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="action-num">4</div>
+                    <div class="action-content">
+                        <strong>Run a raffle prize (optional but high-impact)</strong>
+                        <div class="action-detail">We'd love to explore how Change Please could integrate
+                            into our events, whether that's a raffle prize, a tasting, branded giveaways,
+                            or something we haven't thought of yet. Open to discussing what works for you.</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="action-num">5</div>
+                    <div class="action-content">
+                        <strong>Co-branded press release</strong>
+                        <div class="action-detail">A joint release covering both the ARU and Change Please
+                            angles. Jamie Forsyth at the ARU Press Office is our contact on this side.</div>
+                    </div>
+                </li>
+            </ul>
+
+            <div class="report-box">
+                <div class="label">Contact</div>
+                <div class="contact-info">
+                    <span class="contact-name">Vivian</span>
+                    <span class="contact-email">· <a
+                            href="mailto:VR362@student.aru.ac.uk">VR362@student.aru.ac.uk</a></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============ BRIEF: JO LIVING & EIRS ============ -->
+        <div class="brief" id="jo">
+            <div class="brief-header">
+                <div class="brief-icon">EiR</div>
+                <div class="brief-title">
+                    <h2>Entrepreneurs in Residence</h2>
+                    <div class="subtitle">Professional Network · Managed by Jo Living</div>
+                </div>
+            </div>
+
+            <div class="role-box">
+                <h3>Your Role in This Campaign</h3>
+                <p>The Entrepreneurs in Residence are people with significant networks, resources, and
+                    credibility. Any engagement with them comes through you.</p>
+            </div>
+
+            <div class="actions-label">What We're Proposing</div>
+            <ul class="action-list">
+                <li>
+                    <div class="action-num">1</div>
+                    <div class="action-content">
+                        <strong>Launch event invitations for EiRs</strong>
+                        <div class="action-detail">We'll prepare a professional invitation for the launch event.
+                            More in the
+                            <a href="#events" style="color: var(--coral);">Events section</a>.
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="action-num">2</div>
+                    <div class="action-content">
+                        <strong>LinkedIn content for your network</strong>
+                        <div class="action-detail">We'll prepare a ready-to-share LinkedIn post and the
+                            JustGiving link.</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="action-num">3</div>
+                    <div class="action-content">
+                        <strong>Double or Divide</strong>
+                        <div class="action-detail">A nomination mechanism where each donor challenges someone
+                            to double or divide. Being proposed to the team and we'll keep you
+                            updated on the format.</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="action-num">4</div>
+                    <div class="action-content">
+                        <strong>EiR sessions as auction prizes</strong>
+                        <div class="action-detail">If any EiRs would be open to offering a mentoring or
+                            consulting session as an auction item, that's high value. More on event
+                            mechanics in the <a href="#events" style="color: var(--coral);">Events
+                                section</a>.</div>
+                    </div>
+                </li>
+            </ul>
+
+            <div class="report-box">
+                <div class="label">Contact</div>
+                <div class="contact-info">
+                    <span class="contact-name">Vivian</span>
+                    <span class="contact-email">· <a
+                            href="mailto:VR362@student.aru.ac.uk">VR362@student.aru.ac.uk</a></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============ BRIEF: FACULTY ============ -->
+        <div class="brief" id="faculty">
+            <div class="brief-header">
+                <div class="brief-icon">F</div>
+                <div class="brief-title">
+                    <h2>Faculty & University</h2>
+                    <div class="subtitle">Institutional Endorsement · Infrastructure · Channels</div>
+                </div>
+            </div>
+
+            <div class="role-box">
+                <h3>Your Role in This Campaign</h3>
+                <p>Faculty endorsement turns this from a student project into a university-backed initiative.
+                    That unlocks institutional channels, press coverage, and professional credibility.</p>
+            </div>
+
+            <div class="actions-label">What We're Proposing</div>
+            <ul class="action-list">
+                <li>
+                    <div class="action-num">1</div>
+                    <div class="action-content">
+                        <strong>Confirm payment infrastructure with Dan Berger</strong>
+                        <div class="action-detail">University internal payment system handles all funds, direct
+                            transfer to Change Please Foundation. No student handles money.</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="action-num">2</div>
+                    <div class="action-content">
+                        <strong>Speak at the pre-launch event</strong>
+                        <div class="action-detail">Film screening, campaign introduction, Iftar. More in the
+                            <a href="#events" style="color: var(--coral);">Events section</a>.
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="action-num">3</div>
+                    <div class="action-content">
+                        <strong>Faculty-wide email from the Dean or MBA Director</strong>
+                        <div class="action-detail">One email to the Business School endorsing the campaign.
+                            We'll draft the copy. Reaches staff, students, and alumni.</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="action-num">4</div>
+                    <div class="action-content">
+                        <strong>Room bookings for both events</strong>
+                        <div class="action-detail">Pre-launch (screen, seating, catering space) and formal
+                            launch (professional setup for external guests). More in the
+                            <a href="#events" style="color: var(--coral);">Events section</a>.
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="action-num">5</div>
+                    <div class="action-content">
+                        <strong>Classroom mentions in relevant modules</strong>
+                        <div class="action-detail">A 30-second mention in lectures reaches students beyond the
+                            MBA cohort.</div>
+                    </div>
+                </li>
+            </ul>
+
+            <div class="report-box">
+                <div class="label">Contact</div>
+                <div class="contact-info">
+                    <span class="contact-name">Dr Tabish</span>
+                    <span class="contact-email">· <a
+                            href="mailto:tabish.zaman@aru.ac.uk">tabish.zaman@aru.ac.uk</a></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============ BRIEF: PRESS ============ -->
+        <div class="brief" id="press">
+            <div class="brief-header">
+                <div class="brief-icon">PR</div>
+                <div class="brief-title">
+                    <h2>Press & Media</h2>
+                    <div class="subtitle">Jamie Forsyth · ARU Press Office · Cambridge Local Press</div>
+                </div>
+            </div>
+
+            <div class="role-box">
+                <h3>Your Role in This Campaign</h3>
+                <p>MBA students going beyond coursework to run a real campaign tackling homelessness is a
+                    story. Coverage reaches the Cambridge community: professionals, alumni, and local residents.</p>
+            </div>
+
+            <div class="actions-label">What We're Proposing</div>
+            <ul class="action-list">
+                <li>
+                    <div class="action-num">1</div>
+                    <div class="action-content">
+                        <strong>ARU News feature</strong>
+                        <div class="action-detail">A story on the ARU website about the campaign. We'll provide
+                            quotes, photos, the JustGiving link, and background.</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="action-num">2</div>
+                    <div class="action-content">
+                        <strong>Cambridge local press pitch</strong>
+                        <div class="action-detail">A hyperlocal student-driven story with both an ARU campus
+                            angle and a homelessness angle.</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="action-num">3</div>
+                    <div class="action-content">
+                        <strong>Cover the formal launch event</strong>
+                        <div class="action-detail">A photographer or reporter at the formal launch. More in the
+                            <a href="#events" style="color: var(--coral);">Events section</a>.
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+            <div class="report-box">
+                <div class="label">Contact</div>
+                <div class="contact-info">
+                    <span class="contact-name">Mohamed</span>
+                    <span class="contact-email">· <a
+                            href="mailto:MHAA112@student.aru.ac.uk">MHAA112@student.aru.ac.uk</a></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============ BRIEF: SOCIETIES ============ -->
+        <div class="brief" id="societies">
+            <div class="brief-header">
+                <div class="brief-icon">S</div>
+                <div class="brief-title">
+                    <h2>Societies & Student Groups</h2>
+                </div>
+            </div>
+
+            <div class="role-box">
+                <h3>Your Role in This Campaign</h3>
+                <p>Societies are how students find things they care about on campus. We'd like this campaign
+                    to be one of those things.</p>
+            </div>
+
+            <div class="actions-label">What We're Proposing</div>
+            <ul class="action-list">
+                <li>
+                    <div class="action-num">1</div>
+                    <div class="action-content">
+                        <strong>Share the campaign with your members</strong>
+                        <div class="action-detail">A message in your group chat, a post on your page, a mention at
+                            your next meeting. We'll provide a short blurb and the JustGiving link.</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="action-num">2</div>
+                    <div class="action-content">
+                        <strong>Run a mini-fundraiser (optional)</strong>
+                        <div class="action-detail">A bake sale, a collection at an event you're already running,
+                            a small activity. All proceeds go to the same JustGiving page. We'll provide
+                            branding and support.</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="action-num">3</div>
+                    <div class="action-content">
+                        <strong>Attend and promote our events</strong>
+                        <div class="action-detail">Bring your members to the pre-launch. More in the
+                            <a href="#events" style="color: var(--coral);">Events section</a>.
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+            <div class="report-box">
+                <div class="label">Contact</div>
+                <div class="contact-info">
+                    <span class="contact-name">Mohamed</span>
+                    <span class="contact-email">· <a
+                            href="mailto:MHAA112@student.aru.ac.uk">MHAA112@student.aru.ac.uk</a></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============ EVENTS ============ -->
+        <div class="brief" id="events">
+            <div class="brief-header">
+                <div class="brief-icon">EV</div>
+                <div class="brief-title">
+                    <h2>The Events</h2>
+                    <div class="subtitle">Two events, two purposes, one campaign</div>
+                </div>
+            </div>
+
+            <div class="role-box">
+                <h3>Pre-Launch: Film Screening + Iftar</h3>
+                <p>The first time the campaign goes public, in front of around 40 to 60 students and faculty.
+                    The goal is to set the right tone, build early momentum, and generate content that carries
+                    into the public launch phase.</p>
+            </div>
+
+            <div class="actions-label">Run of Show (Tentative)</div>
+            <ul class="action-list">
+                <li>
+                    <div class="action-num">1</div>
+                    <div class="action-content">
+                        <strong>6:30pm - Doors open</strong>
+                        <div class="action-detail">Guests arrive and settle in.</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="action-num">2</div>
+                    <div class="action-content">
+                        <strong>7:00pm - Film screening (15-30 min)</strong>
+                        <div class="action-detail">Change Please film or video content. Format and length
+                            to be confirmed with Dr Tabish.</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="action-num">3</div>
+                    <div class="action-content">
+                        <strong>7:30pm - Dr Tabish speaks (10 min)</strong>
+                        <div class="action-detail">Introduces the campaign, explains the module connection, sets
+                            the context, and opens the broader conversation around social enterprise
+                            naturally.</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="action-num">4</div>
+                    <div class="action-content">
+                        <strong>7:40pm - Campaign introduction (3 min)</strong>
+                        <div class="action-detail">Brief introduction to the campaign and how people can
+                            support it. The JustGiving page and QR codes are there for anyone who wants to
+                            contribute.</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="action-num">5</div>
+                    <div class="action-content">
+                        <strong>7:45pm - Iftar feast begins</strong>
+                        <div class="action-detail">Informal networking, conversations, one-on-one asks from team
+                            members working the room for face-to-face asks.</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="action-num">6</div>
+                    <div class="action-content">
+                        <strong>8:30pm - Event wraps</strong>
+                    </div>
+                </li>
+            </ul>
+
+            <div style="height: 32px;"></div>
+
+            <div class="role-box">
+                <h3>Formal Launch: External Event</h3>
+                <p>A curated event for around 30 to 50 people. The room will include entrepreneurs, EiRs,
+                    faculty, press, and professional contacts from across the network.</p>
+            </div>
+
+            <div class="actions-label">Run of Show (Tentative)</div>
+            <ul class="action-list">
+                <li>
+                    <div class="action-num">1</div>
+                    <div class="action-content">
+                        <strong>6:00pm - Doors open</strong>
+                        <div class="action-detail">Guests arrive and settle in.</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="action-num">2</div>
+                    <div class="action-content">
+                        <strong>6:30pm - Campaign lead or Dr Tabish opens (5 min)</strong>
+                        <div class="action-detail">Brief context for the room.</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="action-num">3</div>
+                    <div class="action-content">
+                        <strong>6:35pm - Change Please speaker (15-20 min)</strong>
+                        <div class="action-detail">A Change Please representative shares how the model works,
+                            what it's achieved, and who it's helped. Could be a programme lead, a graduate,
+                            or a pre-recorded message if in-person isn't possible.</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="action-num">4</div>
+                    <div class="action-content">
+                        <strong>6:55pm - Q&A (10 min)</strong>
+                    </div>
+                </li>
+                <li>
+                    <div class="action-num">5</div>
+                    <div class="action-content">
+                        <strong>7:05pm - Raffle draw or silent auction results</strong>
+                        <div class="action-detail">Depends on what prizes are secured. Change Please might
+                            offer a coffee subscription prize.</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="action-num">6</div>
+                    <div class="action-content">
+                        <strong>7:15pm - Networking</strong>
+                        <div class="action-detail">Informal conversations and connections.</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="action-num">7</div>
+                    <div class="action-content">
+                        <strong>8:00pm - Event wraps</strong>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- ============ CATERING ============ -->
+        <div class="brief" id="catering">
+            <div class="brief-header">
+                <div class="brief-icon">CA</div>
+                <div class="brief-title">
+                    <h2>Catering</h2>
+                </div>
+            </div>
+
+            <div class="role-box">
+                <h3>What Needs to Happen</h3>
+                <p>Both events require catering. The university catering team needs to be briefed early so they
+                    can accommodate the right format, dietary requirements, and headcount.</p>
+            </div>
+
+            <div class="actions-label">Plan</div>
+            <ul class="action-list">
+                <li>
+                    <div class="action-num">1</div>
+                    <div class="action-content">
+                        <strong>Confirm event funding</strong>
+                        <div class="action-detail">Check whether university event funding covers catering for
+                            either or both events.</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="action-num">2</div>
+                    <div class="action-content">
+                        <strong>Brief university catering</strong>
+                        <div class="action-detail">Pre-launch is an Iftar: no alcohol, water and juice only,
+                            halal food as standard with vegetarian and vegan options alongside. Formal launch
+                            is professional finger food and canapés with soft drinks, juice, and tea/coffee.</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="action-num">3</div>
+                    <div class="action-content">
+                        <strong>Dietary and allergen planning</strong>
+                        <div class="action-detail">Both events: halal, vegetarian, and vegan options as standard.
+                            Allergen cards next to each dish. Include "Any dietary requirements?" in the RSVP.</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="action-num">4</div>
+                    <div class="action-content">
+                        <strong>Confirm headcount</strong>
+                        <div class="action-detail">Pre-launch: around 40 to 60. Formal launch: around 30 to 50.
+                            Final numbers confirmed closer to the date based on RSVPs.</div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- ============ CONTENT & PHOTOGRAPHY ============ -->
+        <div class="brief" id="content">
+            <div class="brief-header">
+                <div class="brief-icon">PH</div>
+                <div class="brief-title">
+                    <h2>Content and Photography</h2>
+                </div>
+            </div>
+
+            <div class="role-box">
+                <h3>What Needs to Happen</h3>
+                <p>The campaign needs content throughout, not just on event days, so this plan covers
+                    what needs to be created, captured, and collected across the full campaign.</p>
+            </div>
+
+            <div class="actions-label">Plan</div>
+            <ul class="action-list">
+                <li>
+                    <div class="action-num">1</div>
+                    <div class="action-content">
+                        <strong>Before events</strong>
+                        <div class="action-detail">Social media templates, campaign graphics, and personal
+                            story posts from team members. Content bank of 10-15 ready-to-post pieces.
+                            Story and reel templates for the team and ambassadors to use.</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="action-num">2</div>
+                    <div class="action-content">
+                        <strong>Pre-launch event</strong>
+                        <div class="action-detail">Room setup, the Iftar spread, Dr Tabish speaking, audience
+                            watching the film, team together. Short video clips for stories and reels.</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="action-num">3</div>
+                    <div class="action-content">
+                        <strong>Formal launch event</strong>
+                        <div class="action-detail">Professional-quality photos of the room, the Change Please
+                            speaker, audience, and networking. Video clips of the Change Please speaker.</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="action-num">4</div>
+                    <div class="action-content">
+                        <strong>After each event</strong>
+                        <div class="action-detail">All photos and video collected and shared with the team
+                            within 48 hours. Milestone posts and progress updates throughout the campaign.</div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- ============ TIMELINE ============ -->
+        <div class="brief" id="timeline">
+            <div class="brief-header">
+                <div class="brief-icon">TL</div>
+                <div class="brief-title">
+                    <h2>Timeline</h2>
+                    <div class="subtitle">Tentative, anchored by event dates once locked</div>
+                </div>
+            </div>
+
+            <ul class="action-list">
+                <li>
+                    <div class="action-num">1</div>
+                    <div class="action-content">
+                        <strong>Weeks 1-2: Foundation</strong>
+                        <div class="action-detail">JustGiving page live, content bank started, stakeholder
+                            briefs distributed. Team leads begin approaching stakeholders.</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="action-num">2</div>
+                    <div class="action-content">
+                        <strong>Weeks 3-4: Soft Launch</strong>
+                        <div class="action-detail">Personal stories go out on team members' channels.
+                            SU newsletter feature and faculty email.</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="action-num">3</div>
+                    <div class="action-content">
+                        <strong>Weeks 4-5: Pre-Launch Event (Iftar)</strong>
+                        <div class="action-detail">First public moment for the campaign.</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="action-num">4</div>
+                    <div class="action-content">
+                        <strong>Weeks 6-7: Public Launch</strong>
+                        <div class="action-detail">Press pitch goes out. Pre-launch event content supports
+                            the public launch.</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="action-num">5</div>
+                    <div class="action-content">
+                        <strong>Weeks 8-9: Formal Launch Event</strong>
+                        <div class="action-detail">Professional network engaged. Cambridge Festival
+                            alignment (24 March) if timing works.</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="action-num">6</div>
+                    <div class="action-content">
+                        <strong>Weeks 10-11: Momentum</strong>
+                        <div class="action-detail">Milestone posts, social proof. Double or Divide deployed.
+                            "We're at £X" updates.</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="action-num">7</div>
+                    <div class="action-content">
+                        <strong>Week 12: Final Push</strong>
+                        <div class="action-detail">"£X to go" updates. Final push across all channels.</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="action-num">8</div>
+                    <div class="action-content">
+                        <strong>Week 12-13: Close and Celebrate</strong>
+                    </div>
+                </li>
+            </ul>
+
+
+        </div>
+
+        <!-- ============ DOUBLE OR DIVIDE ============ -->
+        <div class="brief" id="dod">
+            <div class="brief-header">
+                <div class="brief-icon">DD</div>
+                <div class="brief-title">
+                    <h2>Double or Divide</h2>
+                </div>
+            </div>
+
+            <div class="role-box">
+                <h3>What We're Proposing</h3>
+                <p>A viral donation mechanic where someone donates, then challenges two friends to either match
+                    their donation or split it between them. A £20 donation turns into two more. Each person
+                    either gives £20 (match) or £10 (split), then tags two more. One donation becomes three,
+                    three become nine, and it compounds from there.</p>
+            </div>
+
+            <div class="actions-label">Plan</div>
+            <ul class="action-list">
+                <li>
+                    <div class="action-num">1</div>
+                    <div class="action-content">
+                        <strong>Create a shareable template</strong>
+                        <div class="action-detail">A graphic or story template that explains the mechanic,
+                            includes the JustGiving link, and makes it easy to participate.</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="action-num">2</div>
+                    <div class="action-content">
+                        <strong>Deploy during the momentum phase</strong>
+                        <div class="action-detail">Weeks 10-11, once there's enough traction that people
+                            feel comfortable joining in.</div>
+                    </div>
+                </li>
+            </ul>
+
+            <div class="report-box">
+                <div class="label">Contact</div>
+                <div class="contact-info">
+                    <span class="contact-name">Vignesh</span>
+                    <span class="contact-email">· <a href="mailto:vignesh@email.com">vignesh@email.com</a></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============ PODCAST INTEGRATION ============ -->
+        <div class="brief" id="podcast">
+            <div class="brief-header">
+                <div class="brief-icon">BB</div>
+                <div class="brief-title">
+                    <h2>Builders of the Broken Bazaar</h2>
+                </div>
+            </div>
+
+            <div class="role-box">
+                <h3>What We're Proposing</h3>
+                <p>Dr Tabish hosts "Builders of the Broken Bazaar," a podcast about entrepreneurship in fragile
+                    contexts. Change Please is exactly the kind of enterprise the podcast explores, so there
+                    are natural points where the two can reinforce each other.</p>
+            </div>
+
+            <div class="actions-label">Integration Points</div>
+            <ul class="action-list">
+                <li>
+                    <div class="action-num">1</div>
+                    <div class="action-content">
+                        <strong>Pre-launch event</strong>
+                        <div class="action-detail">Dr Tabish introduces the campaign in the context of
+                            the podcast's themes.</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="action-num">2</div>
+                    <div class="action-content">
+                        <strong>Post-campaign podcast episode</strong>
+                        <div class="action-detail">A reflection episode featuring the team, documenting the
+                            campaign journey. Content that lives beyond the campaign window and serves as
+                            documentation for future cohorts.</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="action-num">3</div>
+                    <div class="action-content">
+                        <strong>Social content</strong>
+                        <div class="action-detail">References to the podcast in LinkedIn posts and stories
+                            embed the campaign in a broader conversation around social enterprise.</div>
+                    </div>
+                </li>
+            </ul>
+
+            <div class="report-box">
+                <div class="label">Contact</div>
+                <div class="contact-info">
+                    <span class="contact-name">Dr Tabish Zaman</span>
+                    <span class="contact-email">· <a
+                            href="mailto:tabish.zaman@aru.ac.uk">tabish.zaman@aru.ac.uk</a></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============ BRIEF: CORE TEAM ============ -->
+        <div class="brief" id="team">
+            <div class="brief-header">
+                <div class="brief-icon">CT</div>
+                <div class="brief-title">
+                    <h2>Team</h2>
+                </div>
+            </div>
+
+            <div class="member-grid">
+                <div class="member-card">
+                    <div class="name">Israel (Tobi)</div>
+                    <div class="role">Campaign Lead & Content</div>
+                    <ul class="member-checklist">
+                        <li class="done">Campaign proposal</li>
+                        <li class="done">Campaign one-pager</li>
+                        <li class="done">Academic one-pager</li>
+                        <li class="done">Forward Change Please toolkit</li>
+                        <li>Set up JustGiving page</li>
+                        <li>Write JustGiving page copy</li>
+                        <li>Post personal story (LinkedIn)</li>
+                        <li>Direct asks to Jo, Tier 1 contacts</li>
+                        <li>Contact Jamie Forsyth (Press)</li>
+                        <li>Write SU newsletter copy</li>
+                        <li>Write faculty email copy</li>
+                    </ul>
+                </div>
+                <div class="member-card">
+                    <div class="name">Vivian</div>
+                    <div class="role">Events & Marketing Materials</div>
+                    <ul class="member-checklist">
+                        <li>Review Change Please toolkit</li>
+                        <li>Schedule call with CP Marketing Manager</li>
+                        <li>Confirm Change Please speaker for launch</li>
+                        <li>Confirm event dates and venues</li>
+                        <li>Organise Iftar catering</li>
+                        <li>Coordinate raffle/auction prizes</li>
+                        <li>Post personal story</li>
+                    </ul>
+                </div>
+                <div class="member-card">
+                    <div class="name">Mohamed</div>
+                    <div class="role">Outreach & Ambassadors</div>
+                    <ul class="member-checklist">
+                        <li>Follow up with Glasshouse contacts</li>
+                        <li>Build invitation list for formal launch</li>
+                        <li>Approach societies</li>
+                        <li>Recruit campus ambassadors</li>
+                        <li>Post personal story</li>
+                    </ul>
+                </div>
+                <div class="member-card">
+                    <div class="name">Anita</div>
+                    <div class="role">Creative & SU Liaison</div>
+                    <ul class="member-checklist">
+                        <li>Send formal email to SU</li>
+                        <li>Design social media templates</li>
+                        <li>Design campus screen slide (16:9)</li>
+                        <li>Design event graphics</li>
+                        <li>Assign event photographer</li>
+                        <li>Post personal story</li>
+                    </ul>
+                </div>
+                <div class="member-card">
+                    <div class="name">Vignesh</div>
+                    <div class="role">Content & Social</div>
+                    <ul class="member-checklist">
+                        <li>Create content bank (10-15 posts)</li>
+                        <li>Create story/reel templates</li>
+                        <li>Coordinate content distribution</li>
+                        <li>Build Double or Divide template</li>
+                        <li>Post event content after events</li>
+                        <li>Post personal story</li>
+                    </ul>
+                </div>
+                <div class="member-card">
+                    <div class="name">Dr Tabish Zaman</div>
+                    <div class="role">Faculty Lead</div>
+                    <ul class="member-checklist">
+                        <li>Confirm payment system (Dan Berger)</li>
+                        <li>Ethics clearance</li>
+                        <li>Speak at pre-launch (Iftar) event</li>
+                        <li>Facilitate faculty email from Dean</li>
+                        <li>Help book event rooms</li>
+                        <li>Negotiate event funding with university</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</body>
+
+</html>
